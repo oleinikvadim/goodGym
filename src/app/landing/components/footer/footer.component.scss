@@ -1,0 +1,11 @@
+.background-img {
+	width: 100%;
+	@media (min-width: 992px) {
+		margin-top: -120px;
+	}
+
+	img {
+		object-fit: contain;
+		width: 100%;
+	}
+}

@@ -1,0 +1,86 @@
+.burger-wrapper {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	transition: background-color 0.3s;
+	z-index: 11;
+	mix-blend-mode: difference;
+	@media (min-width: $phone-lg) {
+		top: 50px;
+	}
+}
+
+.hamburger {
+	cursor: pointer;
+	z-index: inherit;
+	height: 42px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&.active {
+		& > span {
+			height: 0;
+			&:after,
+			&:before {
+				top: 0px;
+				left: 0;
+				width: 60px;
+				@media (max-width: 960px) {
+					background: #fff;
+				}
+			}
+			&:after {
+				transform: rotate(-45deg);
+				@media (max-width: 960px) {
+					width: 40px;
+				}
+			}
+			&:before {
+				transform: rotate(45deg);
+				@media (max-width: 960px) {
+					width: 40px;
+				}
+			}
+		}
+	}
+
+	& > span {
+		display: inline-block;
+		position: relative;
+		height: 2px;
+		width: 60px;
+		background: #fff;
+		vertical-align: middle;
+		@media (max-width: 960px) {
+			width: 40px;
+		}
+		&:before,
+		&:after {
+			display: inline-block;
+			position: absolute;
+			content: "";
+			height: 2px;
+			background: #fff;
+			transition: all 200ms;
+		}
+		&:before {
+			top: -21px;
+			left: 0;
+			width: 60px;
+			@media (max-width: 960px) {
+				width: 40px;
+				top: -17px;
+			}
+		}
+		&:after {
+			top: 19px;
+			left: 0;
+			width: 60px;
+			@media (max-width: 960px) {
+				width: 40px;
+				top: 15px;
+			}
+		}
+	}
+}

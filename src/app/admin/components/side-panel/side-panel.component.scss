@@ -1,0 +1,57 @@
+@import "variables";
+
+.mat-drawer-side {
+	border-right: 0;
+}
+
+.mat-button-toggle-group-appearance-standard .mat-button-toggle + .mat-button-toggle {
+	border-left: 0;
+}
+
+.mat-button-toggle-appearance-standard {
+	background: transparent;
+	color: $white;
+}
+
+.mat-button-toggle-group-appearance-standard {
+	border: none;
+}
+
+.mat-button-toggle-checked {
+	background: $primary;
+}
+
+.logo-wrapper {
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.toggle-group {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0;
+}
+
+.side-panel-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	align-items: center;
+	padding-bottom: 20px;
+	background-color: $grey;
+}
+
+.admin-events {
+	padding: 0 5px;
+	min-width: 40px;
+}

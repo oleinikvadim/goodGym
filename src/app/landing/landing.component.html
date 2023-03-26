@@ -1,0 +1,80 @@
+<div class="burger-wrapper"
+	id="header"
+	(click)="toggleMenu()">
+	<div class="hamburger"
+		[class.active]="toggleMenuIsActive">
+		<span></span>
+	</div>
+</div>
+
+<div class="nav-wrapper"
+	*ngIf="toggleMenuIsActive"
+	[@navigationAnimation]>
+	<nav class="nav"
+		id="menu">
+		<ul class="nav-menu">
+			<li>
+				<a href="#welcome"
+					[class.active]="activeAnchor === sectionName.welcome"
+					(click)="toggleMenu()">Home</a>
+			</li>
+			<li>
+				<a href="#goodDay"
+					[class.active]="activeAnchor === sectionName.goodDay"
+					(click)="toggleMenu()">About</a>
+			</li>
+			<li>
+				<a href="#benefit"
+					[class.active]="activeAnchor === sectionName.benefit"
+					(click)="toggleMenu()">Plans</a>
+			</li>
+			<li>
+				<a href="#signUp"
+					[class.active]="activeAnchor === sectionName.signUp"
+					(click)="toggleMenu()">Contacts</a>
+			</li>
+			<li>
+				<a routerLink="login">Admin</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+
+<div fullpage
+	id="fullpage"
+	[options]="fullPageConfig"
+	(ref)="getFullPageRef($event)">
+
+	<section class="section section-welcome fp-auto-height-responsive">
+		<app-section-welcome></app-section-welcome>
+	</section>
+
+	<section class="section good-day-section fp-auto-height-responsive">
+		<app-good-day-section></app-good-day-section>
+	</section>
+
+	<section class="section good-workout-section fp-auto-height-responsive">
+		<app-workout></app-workout>
+	</section>
+
+	<section class="section slider-section fp-auto-height-responsive">
+		<app-slider-section></app-slider-section>
+	</section>
+
+	<section class="section section-panorama">
+		<app-panorama></app-panorama>
+	</section>
+
+	<section class="section fp-auto-height-responsive">
+		<app-location></app-location>
+	</section>
+
+	<section class="section section-signUp fp-auto-height-responsive">
+		<app-sing-up></app-sing-up>
+	</section>
+
+	<section class="section footer fp-auto-height">
+		<app-footer></app-footer>
+	</section>
+
+</div>

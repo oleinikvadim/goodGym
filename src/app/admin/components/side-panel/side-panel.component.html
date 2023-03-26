@@ -1,0 +1,36 @@
+<div class="side-panel-wrapper">
+	<mat-button-toggle-group class="toggle-group"
+		value="client">
+		<mat-button-toggle value="client">
+			<mat-icon>people</mat-icon>
+		</mat-button-toggle>
+		<mat-button-toggle value="assignment">
+			<mat-icon>assignment</mat-icon>
+		</mat-button-toggle>
+	</mat-button-toggle-group>
+
+
+
+	<button mat-button
+		[matMenuTriggerFor]="belowMenu"
+		class="admin-events">
+		<div class="logo-wrapper">
+			<img src="assets/images/admin/logo.png"
+				alt="logo">
+		</div>
+	</button>
+	<mat-menu #belowMenu="matMenu"
+		yPosition="below">
+		<button mat-menu-item
+			routerLink="/"
+			(click)="logOut()">
+			Good Gym City
+		</button>
+		<button mat-menu-item
+			routerLink="/login"
+			(click)="logOut()">
+			Logout
+		</button>
+	</mat-menu>
+
+</div>

@@ -1,0 +1,67 @@
+<div class="wrapper">
+	<a routerLink="/"
+		class="logo-wrapper">
+		<img src="assets/images/welcome/welcome-section-main.png"
+			alt="welcome">
+	</a>
+
+	<div class="form-wrapper">
+		<p>Admin Login</p>
+		<form class="form"
+			[formGroup]="form"
+			(ngSubmit)="submit()"
+			autocomplete="off">
+
+			<mat-form-field class="mat-input-sm"
+				appearance="outline"
+				color="primary">
+				<mat-label>User Name</mat-label>
+				<input type="text"
+					matInput
+					formControlName="userName"
+					placeholder="User Name">
+				<mat-error *ngIf="!controls.userName.hasError('required') && controls.userName.hasError('nameIsInvalid')">
+					User name should be "admin"
+				</mat-error>
+			</mat-form-field>
+
+			<mat-form-field appearance="outline"
+				class="mat-input-sm">
+				<mat-label>Password</mat-label>
+				<input matInput
+					formControlName="password"
+					[type]="hide ? 'password' : 'text'"
+					placeholder="Password">
+				<button mat-icon-button
+					matSuffix
+					(click)="hide = !hide"
+					[attr.aria-label]="'Hide password'"
+					[attr.aria-pressed]="hide"
+					type="button">
+					<mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+				</button>
+				<mat-error *ngIf="!controls.password.hasError('required') && controls.password.hasError('nameIsInvalid')">
+					Password should be "admin"
+				</mat-error>
+			</mat-form-field>
+
+			<button mat-flat-button
+				color="primary"
+				[disabled]="form.invalid"
+				class="login">
+				<ng-container *ngIf="!fakeLoader; else fakeLoaderExample">
+					LOGIN
+				</ng-container>
+			</button>
+
+		</form>
+	</div>
+
+</div>
+
+<ng-template #fakeLoaderExample>
+	<div class="spinner">
+		<mat-spinner [diameter]="20"
+			color="warm"></mat-spinner>
+	</div>
+</ng-template>

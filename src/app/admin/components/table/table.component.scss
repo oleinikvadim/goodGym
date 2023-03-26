@@ -1,0 +1,95 @@
+@import "variables";
+
+:host {
+	width: 100%;
+}
+
+header {
+	padding: 0 20px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.tablet-wrapper {
+	width: 100%;
+	overflow: auto;
+	padding: 0 20px;
+	height: inherit;
+	max-height: calc(100vh - 81px);
+	::ng-deep .mat-sort-header-container {
+		justify-content: center;
+	}
+
+	.tablet {
+		width: inherit;
+	}
+
+	th.mat-header-cell:first-of-type,
+	td.mat-cell:first-of-type,
+	td.mat-footer-cell:first-of-type {
+		padding-left: 0;
+	}
+
+	th.mat-header-cell:last-of-type,
+	td.mat-cell:last-of-type,
+	td.mat-footer-cell:last-of-type {
+		padding-right: 0;
+	}
+
+	th.mat-header-cell,
+	td.mat-cell {
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	td.mat-cell {
+		border-bottom-color: transparent;
+	}
+
+	.mat-row {
+		transition: $base-transition;
+		cursor: pointer;
+		&:hover {
+			background-color: rgb(0, 0, 0, 0.05);
+		}
+	}
+}
+
+.add-button {
+	background-color: $primary;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	bottom: 40px;
+	right: 40px;
+	transition: $base-transition;
+	&:hover {
+		opacity: $opacity-lg;
+	}
+	mat-icon {
+		color: $white;
+		font-size: 34px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.spinner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+}
+
+.spinner ::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+	transform: translateX(-50%);
+}

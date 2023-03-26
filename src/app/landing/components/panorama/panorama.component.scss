@@ -1,0 +1,12 @@
+@import "variables";
+
+.h1 {
+	color: $white;
+	z-index: 1;
+	font-weight: $font-weight-bold;
+	position: absolute;
+	bottom: 50px;
+	left: 30px;
+	color: white;
+	z-index: 10;
+}
