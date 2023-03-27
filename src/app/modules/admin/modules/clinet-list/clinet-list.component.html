@@ -1,22 +1,24 @@
-<div class="mat-drawer-content-body">
-	<header>
-		<h3>Clients</h3>
-		<mat-form-field appearance="standard">
-			<mat-label>
-				Filter
-			</mat-label>
-			<input matInput
-				(keyup)="applyFilter($event)"
-				placeholder="Ex. ium"
-				#input>
-		</mat-form-field>
+<div class="content-page">
+	<header class="content-page__header content-page__header--with-action">
+		<h3 class="content-page__title">Clients</h3>
+		<div class="content-page__header-action">
+			<mat-form-field appearance="standard">
+				<mat-label>
+					Filter
+				</mat-label>
+				<input matInput
+					(keyup)="applyFilter($event)"
+					placeholder="Ex. ium"
+					#input>
+			</mat-form-field>
+		</div>
 	</header>
 
-	<main class="tablet-wrapper">
+	<main class="content-page__body content-page__body--table">
 
 		<table mat-table
 			[dataSource]="dataSource"
-			class="tablet"
+			class="table table-primary"
 			matSort
 			#clientTable>
 
@@ -103,7 +105,9 @@
 	</main>
 </div>
 
-<button class="add-button"
+<button mat-fab
+	color="primary"
+	class="btn btn-add"
 	(click)="displayOverlay()">
 	<mat-icon>add</mat-icon>
 </button>

@@ -1,6 +1,6 @@
-<div class="wrapper">
+<div class="login">
 	<a routerLink="/"
-		class="logo-wrapper">
+		class="logo-image">
 		<img src="assets/images/welcome/welcome-section-main.png"
 			alt="welcome">
 	</a>
@@ -46,9 +46,8 @@
 			</mat-form-field>
 
 			<button mat-flat-button
-				color="primary"
 				[disabled]="form.invalid"
-				class="login">
+				class="btn btn-primary btn-full btn-login">
 				<ng-container *ngIf="!fakeLoader; else fakeLoaderExample">
 					LOGIN
 				</ng-container>
