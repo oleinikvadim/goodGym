@@ -3,19 +3,18 @@ import { ComponentPortal } from '@angular/cdk/portal';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
-
 import { Subject, takeUntil } from 'rxjs';
 import { Client } from 'src/app/shared/models/client.model';
 import { GetClientListService } from 'src/app/shared/services';
-import { ClientPanelComponent } from '../client-panel/client-panel.component';
+import { ClientPanelComponent } from '../../shared/components/client-panel/client-panel.component';
 
 
 @Component({
-	selector: 'app-table',
-	templateUrl: './table.component.html',
-	styleUrls: ['./table.component.scss']
+	selector: 'app-clinet-list',
+	templateUrl: './clinet-list.component.html',
+	styleUrls: ['./clinet-list.component.scss']
 })
-export class TableComponent implements OnInit {
+export class ClinetListComponent implements OnInit {
 	@ViewChild(MatSort) set matSort(sort: MatSort) {
 		this.dataSource.sort = sort;
 	}

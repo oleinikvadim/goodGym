@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ADMIN_PASS } from '../shared/helper';
-import { AuthenticationService } from '../shared/services';
+import { ADMIN_PASS } from 'src/app/shared/helper';
+import { AuthenticationService } from 'src/app/shared/services';
 
 export enum LoginKey {
 	admin = 'admin',

@@ -1,8 +1,9 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
-import { SectionName } from '../shared/enum';
-import { media, navigationAnimation } from '../shared/helper';
+import { SectionName } from 'src/app/shared/enum';
+import { media, navigationAnimation } from 'src/app/shared/helper';
+
 @Component({
 	selector: 'app-landing',
 	templateUrl: './landing.component.html',

@@ -13,7 +13,7 @@ import {
 } from './components';
 import { LandingComponent } from './landing.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
 	imports: [

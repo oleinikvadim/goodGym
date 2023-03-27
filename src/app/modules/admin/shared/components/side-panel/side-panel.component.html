@@ -1,10 +1,15 @@
 <div class="side-panel-wrapper">
 	<mat-button-toggle-group class="toggle-group"
 		value="client">
-		<mat-button-toggle value="client">
+		<mat-button-toggle value="clients"
+			routerLink="clients"
+			color="primary"
+			routerLinkActive="mat-button-toggle-checked">
 			<mat-icon>people</mat-icon>
 		</mat-button-toggle>
-		<mat-button-toggle value="assignment">
+		<mat-button-toggle value="assignment"
+			routerLink="list"
+			routerLinkActive="mat-button-toggle-checked">
 			<mat-icon>assignment</mat-icon>
 		</mat-button-toggle>
 	</mat-button-toggle-group>

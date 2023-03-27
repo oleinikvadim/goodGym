@@ -5,16 +5,16 @@ import { AuthGuard } from './shared/helper/auth.guard';
 const routes: Routes = [
 	{
 		path: '',
-		loadChildren: () => import('./landing/landing.module').then(m => m.LandingModule)
+		loadChildren: () => import('./modules/index').then(m => m.LandingModule)
 	},
 	{
 		path: 'login',
-		loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+		loadChildren: () => import('./modules/index').then(m => m.LoginModule)
 	},
 	{
-		path: 'admin-panel',
+		path: 'admin',
 		canActivate: [AuthGuard],
-		loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+		loadChildren: () => import('./modules/index').then(m => m.AdminModule)
 	},
 	{ path: '**', redirectTo: '' }
 ]
