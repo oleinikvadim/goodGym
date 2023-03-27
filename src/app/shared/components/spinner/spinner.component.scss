@@ -1,0 +1,41 @@
+@import "variables";
+
+.spinner-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.spinner-wrapper-overlay {
+    background-color: rgb($white, 0.7);
+  }
+
+  .spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+    &.spinner-white {
+
+      ::ng-deep .mat-progress-spinner circle,
+      .mat-spinner circle {
+        stroke: $white;
+      }
+    }
+
+    &.spinner-primary {
+
+      ::ng-deep .mat-progress-spinner circle,
+      .mat-spinner circle {
+        stroke: $primary;
+      }
+    }
+  }
+}

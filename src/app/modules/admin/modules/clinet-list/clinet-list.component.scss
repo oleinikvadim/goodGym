@@ -17,7 +17,9 @@ header {
 	overflow: auto;
 	padding: 0 20px;
 	height: inherit;
-	max-height: calc(100vh - 81px);
+	height: calc(100vh - 81px);
+	position: relative;
+
 	::ng-deep .mat-sort-header-container {
 		justify-content: center;
 	}
@@ -51,6 +53,7 @@ header {
 	.mat-row {
 		transition: $base-transition;
 		cursor: pointer;
+
 		&:hover {
 			background-color: rgb(0, 0, 0, 0.05);
 		}
@@ -69,9 +72,11 @@ header {
 	bottom: 40px;
 	right: 40px;
 	transition: $base-transition;
+
 	&:hover {
 		opacity: $opacity-lg;
 	}
+
 	mat-icon {
 		color: $white;
 		font-size: 34px;
@@ -79,17 +84,4 @@ header {
 		align-items: center;
 		justify-content: center;
 	}
-}
-
-.spinner {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
-	width: 100%;
-}
-
-.spinner ::ng-deep .mat-progress-spinner circle,
-.mat-spinner circle {
-	transform: translateX(-50%);
 }

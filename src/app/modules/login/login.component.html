@@ -60,8 +60,8 @@
 </div>
 
 <ng-template #fakeLoaderExample>
-	<div class="spinner">
-		<mat-spinner [diameter]="20"
-			color="warm"></mat-spinner>
-	</div>
+	<app-spinner [diameter]="20"
+		[overlay]="false"
+		[color]="'spinner-white'">
+	</app-spinner>
 </ng-template>

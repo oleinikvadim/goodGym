@@ -21,6 +21,15 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmDialogModule } from './modules';
+import { SpinnerComponent } from './components';
+
+const REUSE_COMPONENT = [
+	SpinnerComponent
+];
+
+const REUSE_MODULE = [
+	ConfirmDialogModule
+];
 
 const MATERIAL_COMPONENTS = [
 	MatInputModule,
@@ -39,7 +48,13 @@ const MATERIAL_COMPONENTS = [
 	MatProgressSpinnerModule,
 	MatDialogModule,
 	MatButtonModule,
-]
+];
+
+const LIBRIARY = [
+	AngularFullpageModule,
+	SwiperModule,
+	GoogleMapsModule
+];
 
 @NgModule({
 	imports: [
@@ -47,24 +62,22 @@ const MATERIAL_COMPONENTS = [
 		FormsModule,
 		HttpClientModule,
 		ReactiveFormsModule,
-		AngularFullpageModule,
-		SwiperModule,
-		GoogleMapsModule,
-		MatInputModule,
 		MATERIAL_COMPONENTS,
-		ConfirmDialogModule
+		REUSE_MODULE,
+		LIBRIARY
 	],
 	exports: [
 		CommonModule,
 		FormsModule,
+		HttpClientModule,
 		ReactiveFormsModule,
-		AngularFullpageModule,
-		SwiperModule,
-		GoogleMapsModule,
 		MATERIAL_COMPONENTS,
-		ConfirmDialogModule
+		REUSE_MODULE,
+		REUSE_COMPONENT,
+		LIBRIARY
 	],
 	declarations: [
+		REUSE_COMPONENT
 	],
 	providers: [
 		MatDatepickerModule,
