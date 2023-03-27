@@ -1,20 +1,100 @@
-.btn-sign-up {
-	background-color: $primary;
-	padding: 20px;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	&:hover {
-		opacity: $opacity-lg;
+button,
+.button {
+	transition: $base-transition;
+
+	&.btn {
+
+		&:disabled,
+		&[disabled] {
+			background-color: $light-grey;
+			pointer-events: none;
+		}
+	}
+}
+
+.btn {
+	border-radius: 5px;
+
+	&.btn-sm {
+		padding: 5px 10px;
 	}
 
-	.icon {
-		width: 20px;
-		height: 20px;
-		@media (min-width: $tablet) {
-			width: 40px;
-			height: 40px;
+	&.btn-md {
+		padding: 10px;
+	}
+
+	&.btn-primary {
+		background-color: $primary;
+	}
+
+	&.btn-outline {
+		border: 1px solid $grey;
+	}
+
+	&.btn-outline-primary {
+		border: 1px solid $primary;
+
+		&:hover {
+			background-color: $primary;
+			color: $white;
+		}
+	}
+
+	&.btn-logout {
+		border: 1px solid $grey;
+
+		&:hover {
+			background-color: $red;
+			color: $white;
+			border: 1px solid $red;
+		}
+	}
+
+	&.btn-confirm {
+		width: 100%;
+		color: $white;
+		margin-top: auto;
+	}
+
+	&.btn-full {
+		width: 100%;
+	}
+
+	&.btn-sign-up {
+		background-color: $primary;
+		padding: 20px;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&:hover {
+			opacity: $opacity-lg;
+		}
+
+		.icon {
+			width: 20px;
+			height: 20px;
+
+			@media (min-width: $tablet) {
+				width: 40px;
+				height: 40px;
+			}
+		}
+	}
+
+	&.btn-close {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+
+		&:hover {
+			background-color: $primary;
+
+			mat-icon {
+				color: $white;
+			}
 		}
 	}
 }

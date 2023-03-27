@@ -1,4 +1,5 @@
 <div class="side-panel-wrapper">
+
 	<mat-button-toggle-group class="toggle-group"
 		value="client">
 		<mat-button-toggle value="clients"
@@ -14,8 +15,6 @@
 		</mat-button-toggle>
 	</mat-button-toggle-group>
 
-
-
 	<button mat-button
 		[matMenuTriggerFor]="belowMenu"
 		class="admin-events">
@@ -24,16 +23,15 @@
 				alt="logo">
 		</div>
 	</button>
+
 	<mat-menu #belowMenu="matMenu"
 		yPosition="below">
 		<button mat-menu-item
-			routerLink="/"
-			(click)="logOut()">
+			(click)="goToLandingDiaolg()">
 			Good Gym City
 		</button>
 		<button mat-menu-item
-			routerLink="/login"
-			(click)="logOut()">
+			(click)="logoutDiaolg()">
 			Logout
 		</button>
 	</mat-menu>

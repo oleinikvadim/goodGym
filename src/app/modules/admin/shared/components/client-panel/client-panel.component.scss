@@ -20,6 +20,7 @@ header {
 	mat-icon {
 		cursor: pointer;
 		margin-left: auto;
+
 		&:hover {
 			opacity: $opacity-lg;
 		}
@@ -44,6 +45,7 @@ form {
 
 	.form-group {
 		margin-bottom: 30px;
+
 		&:last-child {
 			margin-bottom: 0;
 		}
@@ -55,6 +57,7 @@ form {
 		gap: 15px;
 		align-items: center;
 		margin-bottom: 10px;
+
 		&:last-child {
 			margin-bottom: 0;
 		}
@@ -95,10 +98,4 @@ form {
 
 .date-picker {
 	width: 48%;
-}
-
-.btn-save {
-	width: 100%;
-	color: $white;
-	margin-top: auto;
 }

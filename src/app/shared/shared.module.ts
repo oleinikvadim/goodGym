@@ -19,7 +19,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { ConfirmDialogModule } from './modules';
 
 const MATERIAL_COMPONENTS = [
 	MatInputModule,
@@ -35,7 +36,9 @@ const MATERIAL_COMPONENTS = [
 	MatRadioModule,
 	MatSlideToggleModule,
 	MatMenuModule,
-	MatProgressSpinnerModule
+	MatProgressSpinnerModule,
+	MatDialogModule,
+	MatButtonModule,
 ]
 
 @NgModule({
@@ -48,7 +51,8 @@ const MATERIAL_COMPONENTS = [
 		SwiperModule,
 		GoogleMapsModule,
 		MatInputModule,
-		MATERIAL_COMPONENTS
+		MATERIAL_COMPONENTS,
+		ConfirmDialogModule
 	],
 	exports: [
 		CommonModule,
@@ -57,9 +61,11 @@ const MATERIAL_COMPONENTS = [
 		AngularFullpageModule,
 		SwiperModule,
 		GoogleMapsModule,
-		MATERIAL_COMPONENTS
+		MATERIAL_COMPONENTS,
+		ConfirmDialogModule
 	],
-	declarations: [],
+	declarations: [
+	],
 	providers: [
 		MatDatepickerModule,
 	],
