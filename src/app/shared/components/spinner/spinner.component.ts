@@ -10,4 +10,5 @@ export class SpinnerComponent {
   @Input() overlay: boolean;
   @Input() color: string;
   constructor() { }
+
 }
