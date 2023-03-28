@@ -5,16 +5,10 @@
     position: relative;
   }
 
-  .btn-close {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-  }
-
   .dialog {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 
     .dialog-header {
       display: flex;
@@ -25,6 +19,7 @@
     .dialog-header_title {
       font-size: $is-21;
       font-weight: $font-weight-bold;
+      line-height: 1.2;
     }
 
     .dialog-message {

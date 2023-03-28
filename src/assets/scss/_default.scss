@@ -10,3 +10,7 @@
 .hidden {
 	overflow: hidden;
 }
+
+mat-icon {
+	transition: $base-transition;
+}

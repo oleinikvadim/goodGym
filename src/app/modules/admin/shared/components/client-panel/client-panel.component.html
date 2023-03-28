@@ -1,7 +1,10 @@
 <div class="client-panel__wrapper">
 	<header class="client-panel__header">
 		<h3>{{client ? 'Client - ' + client.FirstName + ' ' + client.LastName : 'New Client'}}</h3>
-		<mat-icon (click)="closeSideNav()">close</mat-icon>
+		<button class="btn btn-close btn-close-absolute"
+			(click)="closeSideNav()">
+			<mat-icon>close</mat-icon>
+		</button>
 	</header>
 
 	<body class="client-panel__body">
@@ -115,7 +118,7 @@
 				</div>
 			</div>
 
-			<button class="btn btn-primary btn-confirm btn-md"
+			<button class="btn btn-primary btn-md btn-full"
 				type="submit"
 				[disabled]="!formGroup.valid">
 				Save
