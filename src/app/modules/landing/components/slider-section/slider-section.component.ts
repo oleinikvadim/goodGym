@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import SwiperCore, { SwiperOptions, Pagination, Thumbs, Autoplay, EffectFade } from 'swiper';
-SwiperCore.use([Pagination, Thumbs, Autoplay, EffectFade]);
+import SwiperCore, { SwiperOptions, Pagination, Thumbs } from 'swiper';
+SwiperCore.use([Pagination, Thumbs]);
 
 @Component({
 	selector: 'app-slider-section',
@@ -13,22 +13,11 @@ export class SliderSectionComponent {
 		slidesPerView: 1,
 		spaceBetween: 50,
 		speed: 800,
-		scrollbar: {
-			draggable: true
-		},
-		effect: 'fade',
-		grabCursor: true,
-		fadeEffect: {
-			crossFade: true
-		},
+		loop: true,
 		breakpoints: {
 			992: {
 				autoHeight: false,
 			}
-		},
-		autoplay: {
-			delay: 3000,
-			disableOnInteraction: false
 		}
 	};
 

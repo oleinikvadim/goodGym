@@ -51,18 +51,11 @@ export class ClientPanelComponent implements OnInit {
 			.subscribe((clients) => {
 				this.client = clients.filter((client) => client.Id === this.clientIdQwery)[0];
 				if (this.client) {
-					this.init()
+					this.init();
 					setTimeout(() => this.fakeLoader = false, this.loaderTimeOut);
 				} else {
 					this.newClientInit();
 				}
-			});
-
-		this.getClientListService
-			.getTest()
-			.pipe(takeUntil(this.unsubscribe$))
-			.subscribe((clients) => {
-				console.log(clients)
 			});
 	}
 
