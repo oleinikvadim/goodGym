@@ -57,6 +57,13 @@ export class ClientPanelComponent implements OnInit {
 					this.newClientInit();
 				}
 			});
+
+		this.getClientListService
+			.getTest()
+			.pipe(takeUntil(this.unsubscribe$))
+			.subscribe((clients) => {
+				console.log(clients)
+			});
 	}
 
 	private init(): void {
