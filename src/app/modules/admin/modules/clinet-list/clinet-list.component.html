@@ -96,13 +96,8 @@
 				(click)="displayOverlay(row)"></tr>
 		</table>
 
-		<app-spinner *ngIf="fakeLoader"
-			[diameter]="100"
-			[overlay]="true"
-			[color]="'spinner-primary'">
-		</app-spinner>
-
 	</main>
+
 </div>
 
 <button mat-fab
@@ -111,3 +106,9 @@
 	(click)="displayOverlay()">
 	<mat-icon>add</mat-icon>
 </button>
+
+<app-spinner *ngIf="fakeLoader"
+	[diameter]="100"
+	[overlay]="true"
+	[color]="'spinner-primary'">
+</app-spinner>

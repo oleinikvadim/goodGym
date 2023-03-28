@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Subject } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
+import { CLIENT_ID } from 'src/app/shared/helper';
 import { Client } from 'src/app/shared/models/client.model';
+import { GetClientListService } from 'src/app/shared/services';
 
 @Component({
 	selector: 'app-client-panel',
@@ -9,13 +12,7 @@ import { Client } from 'src/app/shared/models/client.model';
 	styleUrls: ['./client-panel.component.scss'],
 })
 export class ClientPanelComponent implements OnInit {
-	private _client: Client;
-	get client(): Client {
-		return this._client;
-	}
-	set client(item: Client) {
-		this._client = item;
-	}
+	client: Client;
 	closeSubject$ = new Subject();
 	addClientData$ = new Subject<Client>();
 	toDay = new Date();
@@ -32,21 +29,43 @@ export class ClientPanelComponent implements OnInit {
 		Balance: new FormControl(null),
 		Id: new FormControl('')
 	});
-
+	clientIdQwery: string | null;
+	fakeLoader: boolean;
+	loaderTimeOut = 400;
+	private unsubscribe$ = new Subject<boolean>();
 	constructor(
-	) { }
+		private getClientListService: GetClientListService,
+		private route: ActivatedRoute
+	) {
+	}
 
 	ngOnInit(): void {
-		this._client ? this.init() : this.newClientInit();
+		this.clientIdQwery = this.route.snapshot.queryParamMap.get(CLIENT_ID);
+		if (this.clientIdQwery) {
+			this.fakeLoader = true;
+		}
+
+		this.getClientListService
+			.getAll()
+			.pipe(takeUntil(this.unsubscribe$))
+			.subscribe((clients) => {
+				this.client = clients.filter((client) => client.Id === this.clientIdQwery)[0];
+				if (this.client) {
+					this.init()
+					setTimeout(() => this.fakeLoader = false, this.loaderTimeOut);
+				} else {
+					this.newClientInit();
+				}
+			});
 	}
 
 	private init(): void {
-		this._client.Phones.forEach(phone => this.addPhone(phone));
-		this.formGroup.reset(this._client);
+		this.client.Phones.forEach(phone => this.addPhone(phone));
+		this.formGroup.reset(this.client);
 		this.formGroup.patchValue({
-			DateOfBirth: new Date(this._client.DateOfBirth),
-			Balance: this._client.Balance,
-			IsActive: this._client.IsActive,
+			DateOfBirth: new Date(this.client.DateOfBirth),
+			Balance: this.client.Balance,
+			IsActive: this.client.IsActive,
 			ExpirationDate: this.toDay,
 		});
 	}
@@ -82,7 +101,16 @@ export class ClientPanelComponent implements OnInit {
 
 	onSubmit(): void {
 		this.addClientData$.next(this.formGroup.value);
-		this.closeSideNav();
+		this.fakeLoader = true;
+		setTimeout(() => {
+			this.fakeLoader = false;
+			this.closeSideNav();
+		}, this.loaderTimeOut)
+	}
+
+	ngOnDestroy(): void {
+		this.unsubscribe$.next(true);
+		this.unsubscribe$.unsubscribe();
 	}
 
 }

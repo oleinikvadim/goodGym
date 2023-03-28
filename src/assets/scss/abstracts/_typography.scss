@@ -1,50 +1,64 @@
 h1,
 .h1 {
 	font-size: calc($is-96 / 2);
+
 	@media (min-width: $phone) {
 		font-size: calc($is-96 / 1.5);
 	}
+
 	@media (min-width: $tablet) {
 		font-size: calc($is-96 / 1.2);
 	}
+
 	@media (min-width: $tablet-lg) {
 		font-size: calc($is-96);
 	}
 }
+
 h2,
 .h2 {
 	font-size: calc($is-48 / 1.5);
+
 	@media (min-width: $tablet) {
 		font-size: calc($is-48 / 1.2);
 	}
+
 	@media (min-width: $tablet-lg) {
 		font-size: $is-48;
 	}
 }
+
 h3,
 .h3 {
 	font-size: calc($is-32 / 1.2);
+
 	@media (min-width: $tablet) {
 		font-size: $is-32;
 	}
 }
+
 h4,
 .h4 {
 	font-size: calc($is-31/ 1.2);
+
 	@media (min-width: $tablet) {
 		font-size: $is-31;
 	}
 }
+
 h5,
 .h5 {
 	font-size: calc($is-31 / 1.2);
+
 	@media (min-width: $tablet) {
 		font-size: $is-31;
 	}
 }
+
 h6,
 .h6 {
 	font-size: calc($is-27 / 1.2);
+
 	@media (min-width: $tablet) {
 		font-size: $is-27;
 	}
@@ -52,7 +66,12 @@ h6,
 
 p {
 	font-size: $is-17;
+
 	@media (min-width: $tablet) {
 		font-size: $is-25;
+	}
+
+	&.p-sm {
+		font-size: $is-17;
 	}
 }

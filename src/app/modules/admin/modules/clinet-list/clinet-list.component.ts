@@ -3,7 +3,9 @@ import { ComponentPortal } from '@angular/cdk/portal';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
+import { CLIENT_ID } from 'src/app/shared/helper';
 import { Client } from 'src/app/shared/models/client.model';
 import { GetClientListService } from 'src/app/shared/services';
 import { ClientPanelComponent } from '../../shared/components/client-panel/client-panel.component';
@@ -22,13 +24,20 @@ export class ClinetListComponent implements OnInit {
 	displayedColumns: string[] = ['FirstName', 'LastName', 'IsActive', 'Gender', 'ExpirationDate', 'CurrentBalance'];
 	dataSource = new MatTableDataSource<Client>();
 	fakeLoader = false;
+	clientIdQwery: string | null;
 	private overlayRef!: OverlayRef;
 	private unsubscribe$ = new Subject<boolean>();
 	constructor(
 		private getClientListService: GetClientListService,
 		private overlay: Overlay,
-		private elementRef: ElementRef
+		private elementRef: ElementRef,
+		private router: Router,
+		private route: ActivatedRoute
 	) {
+		this.clientIdQwery = this.route.snapshot.queryParamMap.get(CLIENT_ID);
+		if (this.clientIdQwery) {
+			this.displayOverlay();
+		}
 	}
 
 	ngOnInit(): void {
@@ -45,6 +54,10 @@ export class ClinetListComponent implements OnInit {
 	}
 
 	displayOverlay(data?: Client): void {
+		if (data) {
+			this.setQweryParams(data?.Id);
+		}
+
 		this.overlayRef = this.overlay.create({
 			hasBackdrop: true,
 			panelClass: 'client-panel',
@@ -66,32 +79,25 @@ export class ClinetListComponent implements OnInit {
 			.backdropClick()
 			.pipe(takeUntil(this.unsubscribe$))
 			.subscribe(() => {
+				this.setQweryParams();
 				this.overlayRef.detach();
 			});
 
 		const popupComponent = this.overlayRef.attach(new ComponentPortal(ClientPanelComponent)).instance;
-		popupComponent.client = data!;
 
 		popupComponent.addClientData$
 			.pipe(takeUntil(this.unsubscribe$))
 			.subscribe(clientChanges => {
+				this.setQweryParams();
 				this.newDataSource(clientChanges);
 			})
 
 		popupComponent.closeSubject$
 			.pipe(takeUntil(this.unsubscribe$))
-			.subscribe(() => this.overlayRef.dispose());
-	}
-
-	newDataSource(client: Client): void {
-		this.fakeLoader = true;
-		const findIndex = this.dataSource.data.findIndex(x => x.Id === client.Id);
-		!findIndex ? this.dataSource.data[findIndex] = client : this.dataSource.data.unshift(client);
-		setTimeout(() => {
-			this.fakeLoader = false;
-			this.clientTable?.renderRows();
-			this.dataSource._updateChangeSubscription();
-		}, 1000)
+			.subscribe(() => {
+				this.setQweryParams();
+				this.overlayRef.dispose();
+			});
 	}
 
 	applyFilter(event: Event): void {
@@ -102,6 +108,25 @@ export class ClinetListComponent implements OnInit {
 	ngOnDestroy(): void {
 		this.unsubscribe$.next(true);
 		this.unsubscribe$.unsubscribe();
+	}
+
+	private newDataSource(client: Client): void {
+		this.fakeLoader = true;
+		const findIndex = this.dataSource.data.findIndex(x => x.Id === client.Id);
+		!findIndex ? this.dataSource.data[findIndex] = client : this.dataSource.data.unshift(client);
+		setTimeout(() => {
+			this.fakeLoader = false;
+			this.clientTable?.renderRows();
+			this.dataSource._updateChangeSubscription();
+		}, 1000)
+	}
+
+	private setQweryParams(params?: string) {
+		this.router.navigate([], {
+			queryParams: {
+				[`${CLIENT_ID}`]: params ? params : null,
+			},
+		});
 	}
 
 }

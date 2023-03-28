@@ -12,7 +12,7 @@ export class GetClientListService {
 	}
 
 	addClient(client: Client): Observable<Client> {
-		return this.httpClient.post<Client>('assets/data/client.json', client);
+		return this.httpClient.post<Client>('assets/data/client.json', { body: JSON.stringify(client) });
 	}
 
 }

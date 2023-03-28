@@ -10,26 +10,32 @@
 	flex-direction: column;
 }
 
-header {
+.client-panel__wrapper {
 	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-	margin-bottom: 30px;
+	flex-direction: column;
+	flex: 1;
 
-	mat-icon {
-		cursor: pointer;
-		margin-left: auto;
+	.client-panel__header {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 30px;
 
-		&:hover {
-			opacity: $opacity-lg;
+		mat-icon {
+			cursor: pointer;
+			margin-left: auto;
+
+			&:hover {
+				opacity: $opacity-lg;
+			}
 		}
 	}
-}
 
-body {
-	flex: 1;
-	height: inherit;
+	.client-panel__body {
+		flex: 1;
+		height: inherit;
+	}
 }
 
 form {
