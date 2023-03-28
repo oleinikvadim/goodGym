@@ -21,7 +21,7 @@ export class ClientPanelComponent implements OnInit {
 		LastName: new FormControl('', [Validators.required]),
 		DateOfBirth: new FormControl(null),
 		Gender: new FormControl(null, [Validators.required]),
-		Email: new FormControl(''),
+		Email: new FormControl('', [Validators.required, Validators.email]),
 		Address: new FormControl(''),
 		Phones: new FormArray([]),
 		IsActive: new FormControl(null),
@@ -32,6 +32,11 @@ export class ClientPanelComponent implements OnInit {
 	clientIdQwery: string | null;
 	fakeLoader: boolean;
 	loaderTimeOut = 400;
+	public mask = {
+		guide: true,
+		showMask: true,
+		mask: [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]
+	};
 	private unsubscribe$ = new Subject<boolean>();
 	constructor(
 		private getClientListService: GetClientListService,

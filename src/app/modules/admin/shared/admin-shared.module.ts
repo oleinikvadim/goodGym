@@ -10,14 +10,14 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     FormsModule,
     RouterModule,
-    SharedModule
+    SharedModule,
   ],
   exports: [
     CommonModule,
     FormsModule,
     SidePanelComponent,
     ClientPanelComponent,
-    SharedModule
+    SharedModule,
   ],
   declarations: [
     SidePanelComponent,

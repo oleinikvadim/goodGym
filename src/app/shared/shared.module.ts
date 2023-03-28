@@ -22,13 +22,17 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmDialogModule } from './modules';
 import { SpinnerComponent } from './components';
+import { IConfig, NgxMaskModule } from 'ngx-mask';
+
+export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
 const REUSE_COMPONENT = [
 	SpinnerComponent
 ];
 
 const REUSE_MODULE = [
-	ConfirmDialogModule
+	ConfirmDialogModule,
+	NgxMaskModule.forRoot(),
 ];
 
 const MATERIAL_COMPONENTS = [
@@ -47,7 +51,6 @@ const MATERIAL_COMPONENTS = [
 	MatMenuModule,
 	MatProgressSpinnerModule,
 	MatDialogModule,
-	MatButtonModule,
 ];
 
 const LIBRIARY = [
@@ -64,7 +67,7 @@ const LIBRIARY = [
 		ReactiveFormsModule,
 		MATERIAL_COMPONENTS,
 		REUSE_MODULE,
-		LIBRIARY
+		LIBRIARY,
 	],
 	exports: [
 		CommonModule,
@@ -74,7 +77,7 @@ const LIBRIARY = [
 		MATERIAL_COMPONENTS,
 		REUSE_MODULE,
 		REUSE_COMPONENT,
-		LIBRIARY
+		LIBRIARY,
 	],
 	declarations: [
 		REUSE_COMPONENT
