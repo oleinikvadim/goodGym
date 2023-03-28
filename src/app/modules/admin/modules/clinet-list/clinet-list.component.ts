@@ -5,9 +5,9 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
-import { CLIENT_ID } from 'src/app/shared/helper';
+import { CLIENT_ID, FAKE_LOADER_TIME } from 'src/app/shared/helper';
 import { Client } from 'src/app/shared/models/client.model';
-import { GetClientListService } from 'src/app/shared/services';
+import { MockApiService } from 'src/app/shared/services';
 import { ClientPanelComponent } from '../../shared/components/client-panel/client-panel.component';
 
 
@@ -25,32 +25,31 @@ export class ClinetListComponent implements OnInit {
 	dataSource = new MatTableDataSource<Client>();
 	fakeLoader = false;
 	clientIdQwery: string | null;
+	clientTitle: string | undefined;
 	private overlayRef!: OverlayRef;
 	private unsubscribe$ = new Subject<boolean>();
 	constructor(
-		private getClientListService: GetClientListService,
 		private overlay: Overlay,
 		private elementRef: ElementRef,
 		private router: Router,
-		private route: ActivatedRoute
+		private route: ActivatedRoute,
+		private mockApiService: MockApiService
 	) {
 		this.clientIdQwery = this.route.snapshot.queryParamMap.get(CLIENT_ID);
 		if (this.clientIdQwery) {
 			this.displayOverlay();
 		}
+
+		this.clientTitle = this.route.parent?.snapshot.url[0].path;
 	}
 
 	ngOnInit(): void {
-		this.getClientListService
-			.getAll()
-			.pipe(takeUntil(this.unsubscribe$))
-			.subscribe(response => {
-				this.fakeLoader = true;
-				setTimeout(() => {
-					this.fakeLoader = false;
-					this.dataSource.data = response;
-				}, 1000)
-			});
+		this.getMockData();
+	}
+
+	ngOnDestroy(): void {
+		this.unsubscribe$.next(true);
+		this.unsubscribe$.unsubscribe();
 	}
 
 	displayOverlay(data?: Client): void {
@@ -87,9 +86,13 @@ export class ClinetListComponent implements OnInit {
 
 		popupComponent.addClientData$
 			.pipe(takeUntil(this.unsubscribe$))
-			.subscribe(clientChanges => {
+			.subscribe(() => {
 				this.setQweryParams();
-				this.newDataSource(clientChanges);
+				this.getMockData();
+				setTimeout(() => {
+					this.clientTable?.renderRows();
+					this.dataSource._updateChangeSubscription();
+				}, FAKE_LOADER_TIME)
 			})
 
 		popupComponent.closeSubject$
@@ -105,28 +108,25 @@ export class ClinetListComponent implements OnInit {
 		this.dataSource.filter = filterValue.trim().toLowerCase();
 	}
 
-	ngOnDestroy(): void {
-		this.unsubscribe$.next(true);
-		this.unsubscribe$.unsubscribe();
-	}
-
-	private newDataSource(client: Client): void {
-		this.fakeLoader = true;
-		const findIndex = this.dataSource.data.findIndex(x => x.Id === client.Id);
-		!findIndex ? this.dataSource.data[findIndex] = client : this.dataSource.data.unshift(client);
-		setTimeout(() => {
-			this.fakeLoader = false;
-			this.clientTable?.renderRows();
-			this.dataSource._updateChangeSubscription();
-		}, 1000)
-	}
-
-	private setQweryParams(params?: string) {
+	private setQweryParams(params?: string): void {
 		this.router.navigate([], {
 			queryParams: {
 				[`${CLIENT_ID}`]: params ? params : null,
 			},
 		});
+	}
+
+	private getMockData(): void {
+		this.mockApiService
+			.getClients()
+			.pipe(takeUntil(this.unsubscribe$))
+			.subscribe((response) => {
+				this.fakeLoader = true;
+				setTimeout(() => {
+					this.fakeLoader = false;
+					this.dataSource.data = response;
+				}, FAKE_LOADER_TIME)
+			});
 	}
 
 }

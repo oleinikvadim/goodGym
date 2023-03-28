@@ -30,11 +30,6 @@ const REUSE_COMPONENT = [
 	SpinnerComponent
 ];
 
-const REUSE_MODULE = [
-	ConfirmDialogModule,
-	NgxMaskModule.forRoot(),
-];
-
 const MATERIAL_COMPONENTS = [
 	MatInputModule,
 	MatButtonModule,
@@ -56,7 +51,9 @@ const MATERIAL_COMPONENTS = [
 const LIBRIARY = [
 	AngularFullpageModule,
 	SwiperModule,
-	GoogleMapsModule
+	GoogleMapsModule,
+	ConfirmDialogModule,
+	NgxMaskModule.forRoot(),
 ];
 
 @NgModule({
@@ -66,7 +63,6 @@ const LIBRIARY = [
 		HttpClientModule,
 		ReactiveFormsModule,
 		MATERIAL_COMPONENTS,
-		REUSE_MODULE,
 		LIBRIARY,
 	],
 	exports: [
@@ -75,7 +71,6 @@ const LIBRIARY = [
 		HttpClientModule,
 		ReactiveFormsModule,
 		MATERIAL_COMPONENTS,
-		REUSE_MODULE,
 		REUSE_COMPONENT,
 		LIBRIARY,
 	],

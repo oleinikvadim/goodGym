@@ -8,6 +8,10 @@
     &.content-page__header--with-action {
       justify-content: space-between;
     }
+
+    .content-page__title {
+      text-transform: capitalize;
+    }
   }
 
   .content-page__body {
