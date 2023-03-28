@@ -1,0 +1,27 @@
+.content-page {
+  .content-page__header {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &.content-page__header--with-action {
+      justify-content: space-between;
+    }
+  }
+
+  .content-page__body {
+    &.content-page__body--table {
+
+      width: 100%;
+      overflow: auto;
+      height: inherit;
+      height: calc(100vh - 81px);
+      position: relative;
+
+      .mat-sort-header-container {
+        justify-content: center;
+      }
+    }
+  }
+}

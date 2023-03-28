@@ -1,0 +1,16 @@
+@import "../scss/abstracts/variables/variables";
+
+.container {
+	max-width: 1780px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.hidden {
+	overflow: hidden;
+}
+
+mat-icon {
+	transition: $base-transition;
+}

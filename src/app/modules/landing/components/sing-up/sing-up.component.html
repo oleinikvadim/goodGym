@@ -1,0 +1,28 @@
+<div class="container anim anim-left">
+	<div class="sign-up__top">
+		<div class="h1">Sign Up Today</div>
+		<p>
+			Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+			aut fugit, sed quia consequuntur magni dolores eos qui ratione.
+		</p>
+	</div>
+	<form [formGroup]="form"
+		class="form">
+		<div class="form-row">
+			<div class="form-group">
+				<input type="email"
+					class="form-control"
+					formControlName="email"
+					placeholder="samplemail@gmail.com">
+			</div>
+			<div class="form-group">
+				<button type="submit"
+					class="btn btn-sign-up btn-full">
+					<svg class="icon">
+						<use xlink:href="assets/icons/sprite.svg#rectangle-ok"></use>
+					</svg>
+				</button>
+			</div>
+		</div>
+	</form>
+</div>

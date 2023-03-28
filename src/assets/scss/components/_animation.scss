@@ -1,0 +1,24 @@
+@media (min-width: $tablet) {
+	.section.active {
+		.anim {
+			opacity: $opacity;
+			&.anim-right {
+				transform: translateX(0);
+			}
+			&.anim-left {
+				transform: translateX(0);
+			}
+		}
+	}
+
+	.anim {
+		transition: $base-transition-sm;
+		opacity: 0;
+		&.anim-right {
+			transform: translateX(100vw);
+		}
+		&.anim-left {
+			transform: translateX(-100vw);
+		}
+	}
+}

@@ -1,0 +1,20 @@
+<div class="dialog">
+  <div class="dialog-header">
+    <p class="dialog-header_title"
+      mat-dialog-title>{{ dialogData.title }}</p>
+    <button class="btn btn-close btn-close-absolute">
+      <mat-icon (click)="cancel()">close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content
+    class="dialog-body">
+    <p class="p-sm dialog-message">{{ dialogData.message }}</p>
+  </div>
+  <div mat-dialog-actions
+    class="dialog-action">
+    <button class="btn btn-outline-primary btn-sm btn-full"
+      (click)="cancel()">{{ dialogData.cancelText }}</button>
+    <button class="btn btn-logout btn-sm btn-full"
+      (click)="confirm()">{{ dialogData.confirmText }}</button>
+  </div>
+</div>

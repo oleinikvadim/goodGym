@@ -1,0 +1,135 @@
+<div class="client-panel__wrapper">
+	<header class="client-panel__header">
+		<h3>{{client ? 'Client - ' + client.FirstName + ' ' + client.LastName : 'New Client'}}</h3>
+		<button class="btn btn-close btn-close-absolute"
+			(click)="closeSideNav()">
+			<mat-icon>close</mat-icon>
+		</button>
+	</header>
+
+	<body class="client-panel__body">
+		<form [formGroup]="formGroup"
+			(submit)="onSubmit()">
+			<div class="form-body">
+				<div class="form-group">
+					<div class="form-row">
+						<mat-form-field appearance="outline">
+							<mat-label>First name</mat-label>
+							<input matInput
+								placeholder="First name"
+								type="text"
+								formControlName="FirstName">
+						</mat-form-field>
+
+						<mat-form-field appearance="outline">
+							<mat-label>Last Name</mat-label>
+							<input matInput
+								placeholder="Last Name"
+								type="text"
+								formControlName="LastName">
+						</mat-form-field>
+					</div>
+
+					<div class="form-row">
+
+						<mat-form-field appearance="outline"
+							class="date-picker">
+							<mat-label>Choose a date</mat-label>
+							<input matInput
+								[matDatepicker]="picker"
+								formControlName="DateOfBirth">
+							<mat-datepicker-toggle matSuffix
+								[for]="picker">
+								<mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+							</mat-datepicker-toggle>
+							<mat-datepicker #picker></mat-datepicker>
+						</mat-form-field>
+
+						<mat-radio-group color="primary"
+							aria-label="Select an option"
+							formControlName="Gender"
+							class="radio">
+							<mat-radio-button value="male">Male</mat-radio-button>
+							<mat-radio-button value="female">Female</mat-radio-button>
+						</mat-radio-group>
+
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="form-row">
+						<mat-form-field appearance="outline"
+							class="full-width">
+							<mat-label>Email</mat-label>
+							<input matInput
+								placeholder="Email"
+								type="email"
+								formControlName="Email">
+						</mat-form-field>
+					</div>
+
+					<div class="form-row">
+						<mat-form-field appearance="outline"
+							class="full-width">
+							<mat-label>Address</mat-label>
+							<input matInput
+								placeholder="address"
+								type="text"
+								formControlName="Address">
+						</mat-form-field>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div formArrayName="Phones">
+						<div class="form-row"
+							*ngFor="let phoneFormGroup of getFormsPhonesArray.controls; index as i">
+							<mat-form-field appearance="outline">
+								<mat-label>Phone</mat-label>
+								<input matInput
+									placeholder="Phone"
+									[formControlName]="i">
+							</mat-form-field>
+
+							<button class="btn"
+								(click)="deletePhone(i)">
+								<mat-icon color="primary">close</mat-icon>
+							</button>
+
+						</div>
+						<div class="form-row">
+							<a class="btn btn-add-phone"
+								(click)="addPhone()">
+								<mat-icon color="primary">add</mat-icon> Add Phone
+							</a>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="form-group">
+					<div class="form-row">
+						<mat-slide-toggle color="primary"
+							formControlName="IsActive"
+							class="toggle">
+							Active
+						</mat-slide-toggle>
+					</div>
+				</div>
+			</div>
+
+			<button class="btn btn-primary btn-md btn-full"
+				type="submit"
+				[disabled]="!formGroup.valid">
+				Save
+			</button>
+
+		</form>
+	</body>
+</div>
+
+<app-spinner *ngIf="fakeLoader"
+	[diameter]="100"
+	[overlay]="true"
+	[color]="'spinner-primary'">
+</app-spinner>

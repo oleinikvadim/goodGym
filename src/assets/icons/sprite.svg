@@ -1,0 +1,66 @@
+<svg width="0" height="0" class="hidden">
+  <symbol version="1.1" id="down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve" viewBox="0 0 330 330">
+    <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393
+	c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393
+	s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"></path>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+  </symbol>
+	 <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 38" id="phone">
+    <g>
+      <g>
+        <path d="M9.611 2.11c0 2.798.439 5.545 1.295 8.138.025.08-.011.116-.034.138l-2.82 2.82-.997.998.606 1.275a31.448 31.448 0 0 0 14.86 14.86l1.274.606.998-.999 2.794-2.793a.174.174 0 0 1 .127-.05l.01.002a25.981 25.981 0 0 0 8.165 1.305c.057 0 .11.053.11.11v7.369a.119.119 0 0 1-.11.11C17.202 36 1.999 20.798 1.999 2.112 2 2.055 2.056 2 2.112 2h7.39c.056 0 .11.053.11.11zM2.111 0C.951 0 0 .95 0 2.11 0 21.935 16.066 38 35.889 38c1.16 0 2.111-.95 2.111-2.111V28.52c0-1.161-.95-2.111-2.111-2.111-2.618 0-5.173-.423-7.537-1.204a1.777 1.777 0 0 0-.654-.105c-.55 0-1.077.21-1.5.612l-2.819 2.82A29.42 29.42 0 0 1 9.467 14.62l2.82-2.82c.59-.59.76-1.414.527-2.153a23.984 23.984 0 0 1-1.203-7.536C11.611.95 10.661 0 9.501 0z"></path>
+      </g>
+    </g>
+  </symbol>
+	<symbol version="1.1" id="arrow-right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve" viewBox="0 0 490 490">
+    <g>
+      <polygon points="237.343,31.931 237.343,490 252.657,490 252.657,31.931 390.651,189.082 402.167,178.972 245,0 87.833,178.972 
+		99.349,189.082 	"></polygon>
+    </g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+    <g></g>
+  </symbol>
+	<symbol xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 90 90" xmlns:xlink="http://www.w3.org/1999/xlink" id="slider-arrow">
+    <path fill-rule="evenodd" stroke="rgb(255, 145, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" d="M63.553,80.934 L3.866,52.007 C-0.801,49.745 -1.296,43.288 2.970,40.334 L58.435,1.932 C62.771,-1.070 68.719,1.812 69.049,7.076 L73.270,74.405 C73.595,79.585 68.219,83.196 63.553,80.934 Z"></path>
+  </symbol>
+	<symbol xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 90 90" xmlns:xlink="http://www.w3.org/1999/xlink" id="slider-square">
+    <path fill-rule="evenodd" stroke="rgb(255, 145, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" d="M73.014,73.064 L23.677,80.867 L1.000,36.422 L36.321,1.151 L80.829,23.796 L73.014,73.064 Z"></path>
+  </symbol>
+	<symbol xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 90 90" xmlns:xlink="http://www.w3.org/1999/xlink" id="slider-round">
+    <path fill-rule="evenodd" stroke="rgb(255, 145, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" d="M77.399,54.364 C65.152,89.707 49.306,84.216 29.759,77.442 C-5.635,65.178 -0.151,49.354 6.613,29.835 C18.860,-5.508 34.706,-0.018 54.253,6.756 C89.646,19.021 84.163,34.845 77.399,54.364 Z"></path>
+  </symbol>
+	<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 38" id="rectangle-ok">
+    <g>
+      <g>
+        <path fill="#fff" d="M1.665 16.535L20.05 34.92 54.334.635l1.415 1.414-34.285 34.285-1.414 1.414L.251 17.95z"></path>
+      </g>
+    </g>
+  </symbol>
+</svg>

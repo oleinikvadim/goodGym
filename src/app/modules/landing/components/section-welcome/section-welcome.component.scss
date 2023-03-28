@@ -1,0 +1,123 @@
+@import "variables";
+
+:host {
+	position: relative;
+	display: flex;
+	height: 100%;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 0;
+	@media (min-width: $phone-lg) {
+		padding: 50px 0;
+	}
+
+	.container {
+		height: 100%;
+	}
+
+	.background-video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	h2 {
+		color: $white;
+		font-family: "Montserrat Alternates";
+		font-weight: $font-weight-bold;
+		text-align: center;
+		@media (min-width: $tablet-lg) {
+			text-align: left;
+		}
+	}
+
+	.phone-number {
+		@media (min-width: $tablet) {
+			margin: 0 100px 0 auto;
+		}
+	}
+
+	.section-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: 70vh;
+		gap: 80px;
+		@media (min-width: $tablet) {
+			gap: 100px;
+		}
+		@media (max-height: 500px) and (min-width: $tablet) {
+			gap: 20px;
+		}
+		@media (min-width: $tablet-lg) {
+			height: 100%;
+		}
+	}
+
+	.about {
+		@media (min-width: $tablet-lg) {
+			height: 65%;
+		}
+		.image-wrapper {
+			max-width: 1130px;
+			width: 100%;
+			max-height: 50%;
+			margin: 0 auto 100px auto;
+			@media (min-width: $phone-lg) {
+				width: 80%;
+			}
+			@media (min-width: $tablet-lg) {
+				width: 70%;
+				margin: 0 0 80px 0;
+			}
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+		}
+	}
+
+	.next-page {
+		display: none;
+		@media (min-width: $tablet-lg) {
+			position: absolute;
+			display: block;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 50px;
+			height: 25px;
+			animation: MoveUpDown 2s ease-in-out infinite;
+			@media (min-width: $widescreen) {
+				bottom: 5%;
+				width: 100px;
+				height: 50px;
+			}
+			.icon {
+				fill: $white;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+@keyframes MoveUpDown {
+	0% {
+		bottom: 0%;
+	}
+	50% {
+		bottom: 8%;
+	}
+	100% {
+		bottom: 0%;
+	}
+}

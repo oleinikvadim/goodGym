@@ -1,0 +1,46 @@
+.phone-number {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 20px;
+	@media (min-width: $phone) {
+		justify-content: center;
+	}
+	&.phone-number--white {
+		.icon {
+			fill: $white;
+		}
+	}
+	&.phone-number--primary {
+		.icon {
+			fill: $primary;
+		}
+	}
+
+	.icon {
+		width: 40px;
+		min-width: 40px;
+		height: 40px;
+		min-height: 40px;
+	}
+
+	.number {
+		font-family: "Montserrat Alternates";
+		color: $white;
+		transition: $base-transition;
+		&:hover {
+			text-decoration: none;
+			color: $primary;
+		}
+		&.number--sm {
+			font-size: $is-27;
+		}
+		&.number--md {
+			font-size: $is-21;
+			@media (min-width: $phone) {
+				font-size: $is-32;
+			}
+		}
+	}
+}

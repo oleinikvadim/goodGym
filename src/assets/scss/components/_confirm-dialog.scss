@@ -1,0 +1,36 @@
+.confirm-dialog {
+
+  .mat-dialog-container {
+    padding: 10px;
+    position: relative;
+  }
+
+  .dialog {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .dialog-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .dialog-header_title {
+      font-size: $is-21;
+      font-weight: $font-weight-bold;
+      line-height: 1.2;
+    }
+
+    .dialog-message {
+      line-height: 1.2;
+    }
+
+    .dialog-action {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+  }
+
+}

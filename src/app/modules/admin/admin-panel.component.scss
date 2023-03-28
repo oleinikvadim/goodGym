@@ -1,0 +1,22 @@
+@import "variables";
+
+.mat-drawer-container {
+	height: 100vh;
+	background-color: $white;
+}
+
+.mat-drawer {
+	background-color: $white;
+}
+
+.mat-drawer-content {
+	display: flex;
+	flex-direction: row;
+	max-height: 100vh;
+	overflow: hidden;
+
+	.mat-drawer-content-body {
+		flex: 1;
+		height: inherit;
+	}
+}
