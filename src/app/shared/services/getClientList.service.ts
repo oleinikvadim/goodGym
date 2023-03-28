@@ -16,6 +16,6 @@ export class GetClientListService {
 	}
 
 	getTest(): Observable<any[]> {
-		return this.httpClient.get<any[]>('https://my-json-server.typicode.com/oleinikvadim/goodgym/posts');
+		return this.httpClient.get<any[]>('https://my-json-server.typicode.com/oleinikvadim/goodgym/clients');
 	}
 }
