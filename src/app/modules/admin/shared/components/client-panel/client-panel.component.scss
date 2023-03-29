@@ -43,6 +43,14 @@
 		height: inherit;
 	}
 
+	.client-panel__action {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+	}
+
 	.form-body {
 		height: calc(100vh - 170px);
 		overflow: auto;

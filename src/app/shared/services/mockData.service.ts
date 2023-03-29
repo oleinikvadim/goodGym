@@ -18,4 +18,10 @@ export class MockApiService {
     !findIndex ? this.fakeClinets[findIndex] = client : this.fakeClinets.unshift(client);
     return of(this.fakeClinets);
   }
+
+  deleteClient(client: Client): Observable<Client[]> {
+    const findIndex = this.fakeClinets.findIndex(x => x.Id === client.Id);
+    this.fakeClinets.splice(findIndex, 1);
+    return of(this.fakeClinets);
+  }
 }

@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { CLIENT_ID, FAKE_LOADER_TIME } from 'src/app/shared/helper';
 import { Client } from 'src/app/shared/models/client.model';
+import { ConfirmDialogService } from 'src/app/shared/modules/confirm-dialog/confirm-dialog.service';
 import { MockApiService } from 'src/app/shared/services';
 
 @Component({
@@ -14,7 +15,7 @@ import { MockApiService } from 'src/app/shared/services';
 export class ClientPanelComponent implements OnInit {
 	client: Client;
 	closeSubject$ = new Subject();
-	addClientData$ = new Subject<boolean>();
+	clientAction$ = new Subject<boolean>();
 	toDay = new Date();
 	formGroup: FormGroup = new FormGroup({
 		FirstName: new FormControl('', [Validators.required]),
@@ -34,7 +35,8 @@ export class ClientPanelComponent implements OnInit {
 	private unsubscribe$ = new Subject<boolean>();
 	constructor(
 		private route: ActivatedRoute,
-		private mockApiService: MockApiService
+		private mockApiService: MockApiService,
+		private dialogService: ConfirmDialogService,
 	) {
 	}
 
@@ -88,13 +90,39 @@ export class ClientPanelComponent implements OnInit {
 			.addClient(this.formGroup.getRawValue())
 			.pipe(takeUntil(this.unsubscribe$))
 			.subscribe(() => {
-				this.addClientData$.next(true);
+				this.clientAction$.next(true);
 			});
+		this.loadAndCloseSideNav();
+	}
 
+	deleteClientDiaolg(client: Client) {
+		const options = {
+			title: 'Delete client',
+			message: `Are you sure you want to delete ${client.FirstName} ${client.LastName}?`,
+			cancelText: 'Cancel',
+			confirmText: 'Yes'
+		};
+
+		this.dialogService.open(options);
+
+		this.dialogService
+			.confirmed()
+			.pipe(takeUntil(this.unsubscribe$))
+			.subscribe(confirmed => {
+				if (confirmed) {
+					this.mockApiService.deleteClient(this.client);
+					this.clientAction$.next(true);
+					this.fakeLoader = true;
+					this.loadAndCloseSideNav();
+				}
+			});
+	}
+
+	private loadAndCloseSideNav(): void {
 		setTimeout(() => {
 			this.fakeLoader = false;
 			this.closeSideNav()
-		}, FAKE_LOADER_TIME)
+		}, FAKE_LOADER_TIME);
 	}
 
 	private init(): void {

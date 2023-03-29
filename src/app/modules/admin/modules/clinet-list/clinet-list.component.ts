@@ -84,7 +84,7 @@ export class ClinetListComponent implements OnInit {
 
 		const popupComponent = this.overlayRef.attach(new ComponentPortal(ClientPanelComponent)).instance;
 
-		popupComponent.addClientData$
+		popupComponent.clientAction$
 			.pipe(takeUntil(this.unsubscribe$))
 			.subscribe(() => {
 				this.setQweryParams();

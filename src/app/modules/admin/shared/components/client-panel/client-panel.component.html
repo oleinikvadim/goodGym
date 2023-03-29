@@ -120,11 +120,20 @@
 				</div>
 			</div>
 
-			<button class="btn btn-primary btn-md btn-full"
-				type="submit"
-				[disabled]="!formGroup.valid">
-				Save
-			</button>
+			<div class="client-panel__action">
+				<button class="btn btn-primary btn-md btn-full"
+					type="submit"
+					[disabled]="!formGroup.valid">
+					Save
+				</button>
+
+				<button class="btn btn-outline btn-md btn-full"
+					type="button"
+					*ngIf="client"
+					(click)="deleteClientDiaolg(client)">
+					Delete
+				</button>
+			</div>
 
 		</form>
 	</body>
