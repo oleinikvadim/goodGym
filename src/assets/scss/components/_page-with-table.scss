@@ -1,4 +1,16 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+}
+
 .content-page {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex: 1;
+
   .content-page__header {
     padding: 0 20px;
     display: flex;
@@ -16,11 +28,9 @@
 
   .content-page__body {
     &.content-page__body--table {
-
-      width: calc(100vw - 48px);
-      overflow: auto;
-      height: calc(100vh - 81px);
       position: relative;
+      flex: 1;
+      overflow: auto;
 
       .mat-sort-header-container {
         justify-content: center;

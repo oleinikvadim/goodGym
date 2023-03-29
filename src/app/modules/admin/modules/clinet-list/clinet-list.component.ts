@@ -1,6 +1,6 @@
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostBinding, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -17,6 +17,7 @@ import { ClientPanelComponent } from '../../shared/components/client-panel/clien
 	styleUrls: ['./clinet-list.component.scss']
 })
 export class ClinetListComponent implements OnInit {
+	@HostBinding('class') class = 'content';
 	@ViewChild(MatSort) set matSort(sort: MatSort) {
 		this.dataSource.sort = sort;
 	}

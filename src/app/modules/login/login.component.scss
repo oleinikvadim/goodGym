@@ -19,6 +19,7 @@
 	justify-content: center;
 	flex-direction: column;
 	gap: 30px;
+	padding: 0 10px;
 
 	.logo-image {
 		max-width: 600px;
@@ -26,7 +27,7 @@
 		transition: $base-transition;
 
 		&:hover {
-			opacity: $opacity-lg;
+			transform: scale(1.02);
 		}
 
 		img {
@@ -40,8 +41,13 @@
 
 .form-wrapper {
 	background-color: $white;
-	padding: 20px;
-	width: 400px;
+	padding: 10px;
+	width: 100%;
+
+	@media (min-width: $phone) {
+		padding: 20px;
+		width: 400px;
+	}
 
 	p {
 		color: $grey;

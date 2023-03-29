@@ -11,9 +11,13 @@
 
 .mat-drawer-content {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	max-height: 100vh;
 	overflow: hidden;
+
+	@media (min-width: $phone) {
+		flex-direction: row;
+	}
 
 	.mat-drawer-content-body {
 		flex: 1;
