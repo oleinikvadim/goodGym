@@ -62,6 +62,7 @@ export class ClinetListComponent implements OnInit {
 			hasBackdrop: true,
 			panelClass: 'client-panel',
 			height: '100svh',
+			maxHeight: '100svh',
 			positionStrategy: this.overlay
 				.position()
 				.flexibleConnectedTo(this.elementRef)

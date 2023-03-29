@@ -70,10 +70,10 @@
 		overflow: auto;
 		padding: 0 10px;
 		margin: 0 -10px;
-		height: calc(100vh - 120px);
+		height: calc(100svh - 120px);
 
 		@media (min-width: $phone) {
-			height: calc(100vh - 170px);
+			height: calc(100svh - 170px);
 			padding: 0 20px;
 			margin: 0 -20px;
 		}
