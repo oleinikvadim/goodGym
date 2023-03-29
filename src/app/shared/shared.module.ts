@@ -21,18 +21,14 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmDialogModule } from './modules';
-import { SpinnerComponent } from './components';
+import { EmptyPlugComponent, SpinnerComponent } from './components';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 
 export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
 const REUSE_COMPONENT = [
-	SpinnerComponent
-];
-
-const REUSE_MODULE = [
-	ConfirmDialogModule,
-	NgxMaskModule.forRoot(),
+	SpinnerComponent,
+	EmptyPlugComponent
 ];
 
 const MATERIAL_COMPONENTS = [
@@ -56,7 +52,9 @@ const MATERIAL_COMPONENTS = [
 const LIBRIARY = [
 	AngularFullpageModule,
 	SwiperModule,
-	GoogleMapsModule
+	GoogleMapsModule,
+	ConfirmDialogModule,
+	NgxMaskModule.forRoot(),
 ];
 
 @NgModule({
@@ -66,7 +64,6 @@ const LIBRIARY = [
 		HttpClientModule,
 		ReactiveFormsModule,
 		MATERIAL_COMPONENTS,
-		REUSE_MODULE,
 		LIBRIARY,
 	],
 	exports: [
@@ -75,7 +72,6 @@ const LIBRIARY = [
 		HttpClientModule,
 		ReactiveFormsModule,
 		MATERIAL_COMPONENTS,
-		REUSE_MODULE,
 		REUSE_COMPONENT,
 		LIBRIARY,
 	],

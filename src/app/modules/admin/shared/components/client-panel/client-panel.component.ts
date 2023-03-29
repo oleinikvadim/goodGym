@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
-import { CLIENT_ID } from 'src/app/shared/helper';
+import { GernderEnum } from 'src/app/shared/enum';
+import { CLIENT_ID, FAKE_LOADER_TIME } from 'src/app/shared/helper';
 import { Client } from 'src/app/shared/models/client.model';
-import { GetClientListService } from 'src/app/shared/services';
+import { ConfirmDialogService } from 'src/app/shared/modules/confirm-dialog/confirm-dialog.service';
+import { MockApiService } from 'src/app/shared/services';
 
 @Component({
 	selector: 'app-client-panel',
@@ -14,7 +16,7 @@ import { GetClientListService } from 'src/app/shared/services';
 export class ClientPanelComponent implements OnInit {
 	client: Client;
 	closeSubject$ = new Subject();
-	addClientData$ = new Subject<Client>();
+	clientAction$ = new Subject<boolean>();
 	toDay = new Date();
 	formGroup: FormGroup = new FormGroup({
 		FirstName: new FormControl('', [Validators.required]),
@@ -31,16 +33,12 @@ export class ClientPanelComponent implements OnInit {
 	});
 	clientIdQwery: string | null;
 	fakeLoader: boolean;
-	loaderTimeOut = 400;
-	public mask = {
-		guide: true,
-		showMask: true,
-		mask: [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]
-	};
+	gernderEnum = GernderEnum;
 	private unsubscribe$ = new Subject<boolean>();
 	constructor(
-		private getClientListService: GetClientListService,
-		private route: ActivatedRoute
+		private route: ActivatedRoute,
+		private mockApiService: MockApiService,
+		private dialogService: ConfirmDialogService,
 	) {
 	}
 
@@ -50,39 +48,23 @@ export class ClientPanelComponent implements OnInit {
 			this.fakeLoader = true;
 		}
 
-		this.getClientListService
-			.getAll()
+		this.mockApiService
+			.getClients()
 			.pipe(takeUntil(this.unsubscribe$))
 			.subscribe((clients) => {
 				this.client = clients.filter((client) => client.Id === this.clientIdQwery)[0];
 				if (this.client) {
 					this.init();
-					setTimeout(() => this.fakeLoader = false, this.loaderTimeOut);
+					setTimeout(() => this.fakeLoader = false, FAKE_LOADER_TIME);
 				} else {
 					this.newClientInit();
 				}
 			});
 	}
 
-	private init(): void {
-		this.client.Phones.forEach(phone => this.addPhone(phone));
-		this.formGroup.reset(this.client);
-		this.formGroup.patchValue({
-			DateOfBirth: new Date(this.client.DateOfBirth),
-			Balance: this.client.Balance,
-			IsActive: this.client.IsActive,
-			ExpirationDate: this.toDay,
-		});
-	}
-
-	private newClientInit(): void {
-		this.formGroup.reset();
-		this.formGroup.patchValue({
-			Id: Math.floor(Math.random() * 10),
-			Balance: Math.floor(Math.random() * 20),
-			IsActive: false,
-			ExpirationDate: this.toDay,
-		});
+	ngOnDestroy(): void {
+		this.unsubscribe$.next(true);
+		this.unsubscribe$.unsubscribe();
 	}
 
 	get getFormsPhonesArray(): FormArray {
@@ -105,17 +87,66 @@ export class ClientPanelComponent implements OnInit {
 	}
 
 	onSubmit(): void {
-		this.addClientData$.next(this.formGroup.value);
 		this.fakeLoader = true;
-		setTimeout(() => {
-			this.fakeLoader = false;
-			this.closeSideNav();
-		}, this.loaderTimeOut)
+		this.mockApiService
+			.addClient(this.formGroup.getRawValue())
+			.pipe(takeUntil(this.unsubscribe$))
+			.subscribe(() => {
+				this.clientAction$.next(true);
+			});
+		this.loadAndCloseSideNav();
 	}
 
-	ngOnDestroy(): void {
-		this.unsubscribe$.next(true);
-		this.unsubscribe$.unsubscribe();
+	deleteClientDiaolg(client: Client) {
+		const options = {
+			title: 'Delete client',
+			message: `Are you sure you want to delete ${client.FirstName} ${client.LastName}?`,
+			cancelText: 'Cancel',
+			confirmText: 'Yes'
+		};
+
+		this.dialogService.open(options);
+
+		this.dialogService
+			.confirmed()
+			.pipe(takeUntil(this.unsubscribe$))
+			.subscribe(confirmed => {
+				if (confirmed) {
+					this.mockApiService.deleteClient(this.client);
+					this.clientAction$.next(true);
+					this.fakeLoader = true;
+					this.loadAndCloseSideNav();
+				}
+			});
+	}
+
+	private loadAndCloseSideNav(): void {
+		setTimeout(() => {
+			this.fakeLoader = false;
+			this.closeSideNav()
+		}, FAKE_LOADER_TIME);
+	}
+
+	private init(): void {
+		this.client.Phones.forEach(phone => this.addPhone(phone));
+		this.formGroup.reset(this.client);
+		this.formGroup.patchValue({
+			DateOfBirth: new Date(this.client.DateOfBirth),
+			Balance: this.client.Balance,
+			IsActive: this.client.IsActive,
+			ExpirationDate: this.toDay,
+		});
+	}
+
+	private newClientInit(): void {
+		this.formGroup.reset();
+		this.formGroup.patchValue({
+			Gender: this.gernderEnum.MALE,
+			Id: Math.floor(Math.random() * 10).toString(),
+			Balance: Math.floor(Math.random() * 20),
+			IsActive: false,
+			ExpirationDate: this.toDay,
+		});
 	}
 
 }

@@ -8,14 +8,17 @@
     &.content-page__header--with-action {
       justify-content: space-between;
     }
+
+    .content-page__title {
+      text-transform: capitalize;
+    }
   }
 
   .content-page__body {
     &.content-page__body--table {
 
-      width: 100%;
+      width: calc(100vw - 48px);
       overflow: auto;
-      height: inherit;
       height: calc(100vh - 81px);
       position: relative;
 

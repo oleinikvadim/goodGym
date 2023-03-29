@@ -1,5 +1,5 @@
 .table {
-  width: inherit;
+  width: 100%;
 
   &.table-primary {
 
@@ -19,6 +19,10 @@
     td.mat-cell {
       text-align: center;
       vertical-align: middle;
+    }
+
+    .mat-header-cell {
+      min-width: 140px;
     }
 
     td.mat-cell {

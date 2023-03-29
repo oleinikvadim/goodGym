@@ -10,7 +10,7 @@ export interface Client {
 	Address: string;
 	SubscriptionId: string;
 	ExpirationDate: string;
-	Balance: string;
+	Balance: number;
 }
 
 export interface Login {

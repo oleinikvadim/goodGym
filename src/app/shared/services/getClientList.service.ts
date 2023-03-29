@@ -14,8 +14,4 @@ export class GetClientListService {
 	addClient(client: Client): Observable<Client> {
 		return this.httpClient.post<Client>('assets/data/client.json', { body: JSON.stringify(client) });
 	}
-
-	getTest(): Observable<any[]> {
-		return this.httpClient.get<any[]>('https://my-json-server.typicode.com/oleinikvadim/goodgym/clients');
-	}
 }
