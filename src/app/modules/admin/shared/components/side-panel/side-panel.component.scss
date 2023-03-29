@@ -39,20 +39,28 @@
 
 	.side-panel__route {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		align-items: center;
 		justify-content: center;
 		border-radius: 0;
+
+		@media (min-width: $phone) {
+			flex-direction: column;
+		}
 	}
 
 	.side-panel-wrapper {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		justify-content: space-between;
 		height: inherit;
 		align-items: center;
-		padding-bottom: 20px;
 		background-color: $grey;
+
+		@media (min-width: $phone) {
+			padding-bottom: 20px;
+			flex-direction: column;
+		}
 	}
 
 	.side-panel__user-action {
