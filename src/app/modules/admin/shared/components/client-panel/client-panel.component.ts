@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
+import { GernderEnum } from 'src/app/shared/enum';
 import { CLIENT_ID, FAKE_LOADER_TIME } from 'src/app/shared/helper';
 import { Client } from 'src/app/shared/models/client.model';
 import { ConfirmDialogService } from 'src/app/shared/modules/confirm-dialog/confirm-dialog.service';
@@ -32,6 +33,7 @@ export class ClientPanelComponent implements OnInit {
 	});
 	clientIdQwery: string | null;
 	fakeLoader: boolean;
+	gernderEnum = GernderEnum;
 	private unsubscribe$ = new Subject<boolean>();
 	constructor(
 		private route: ActivatedRoute,
@@ -139,6 +141,7 @@ export class ClientPanelComponent implements OnInit {
 	private newClientInit(): void {
 		this.formGroup.reset();
 		this.formGroup.patchValue({
+			Gender: this.gernderEnum.MALE,
 			Id: Math.floor(Math.random() * 10).toString(),
 			Balance: Math.floor(Math.random() * 20),
 			IsActive: false,

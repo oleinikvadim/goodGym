@@ -21,13 +21,14 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmDialogModule } from './modules';
-import { SpinnerComponent } from './components';
+import { EmptyPlugComponent, SpinnerComponent } from './components';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 
 export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
 const REUSE_COMPONENT = [
-	SpinnerComponent
+	SpinnerComponent,
+	EmptyPlugComponent
 ];
 
 const MATERIAL_COMPONENTS = [

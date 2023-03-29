@@ -21,7 +21,7 @@ export class ClinetListComponent implements OnInit {
 		this.dataSource.sort = sort;
 	}
 	@ViewChild('clientTable', { static: true }) clientTable!: MatTable<Client>;
-	displayedColumns: string[] = ['FirstName', 'LastName', 'IsActive', 'Gender', 'ExpirationDate', 'CurrentBalance'];
+	displayedColumns: string[] = ['FirstName', 'LastName', 'IsActive', 'Gender', 'ExpirationDate', 'Balance'];
 	dataSource = new MatTableDataSource<Client>();
 	fakeLoader = false;
 	clientIdQwery: string | null;

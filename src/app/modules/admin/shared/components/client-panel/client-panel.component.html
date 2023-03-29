@@ -1,6 +1,8 @@
 <div class="client-panel__wrapper">
 	<header class="client-panel__header">
-		<h3>{{client ? 'Client - ' + client.FirstName + ' ' + client.LastName : 'New Client'}}</h3>
+		<p class="text-bold">
+			{{client ? 'Client - ' + client.FirstName + ' ' + client.LastName : 'New Client'}}
+		</p>
 		<button class="btn btn-close btn-close-absolute"
 			(click)="closeSideNav()">
 			<mat-icon>close</mat-icon>
@@ -33,11 +35,13 @@
 					<div class="form-row">
 
 						<mat-form-field appearance="outline"
-							class="date-picker">
+							class="date-picker"
+							(click)="picker.open()">
 							<mat-label>Choose a date</mat-label>
 							<input matInput
 								[matDatepicker]="picker"
-								formControlName="DateOfBirth">
+								formControlName="DateOfBirth"
+								readonly>
 							<mat-datepicker-toggle matSuffix
 								[for]="picker">
 								<mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
@@ -49,8 +53,8 @@
 							aria-label="Select an option"
 							formControlName="Gender"
 							class="radio">
-							<mat-radio-button value="male">Male</mat-radio-button>
-							<mat-radio-button value="female">Female</mat-radio-button>
+							<mat-radio-button [value]="gernderEnum.MALE">Male</mat-radio-button>
+							<mat-radio-button [value]="gernderEnum.FEMALE">Female</mat-radio-button>
 						</mat-radio-group>
 
 					</div>
@@ -82,10 +86,10 @@
 
 				<div class="form-group">
 					<div formArrayName="Phones">
-						<div class="form-row"
+						<div class="form-row form-row--phone"
 							*ngFor="let phoneFormGroup of getFormsPhonesArray.controls; index as i">
 							<mat-form-field appearance="outline">
-								<mat-label>Phone</mat-label>
+								<mat-label>Phone {{i + 1}}</mat-label>
 								<input matInput
 									placeholder="Phone"
 									type="text"
@@ -93,7 +97,8 @@
 									mask="+00 (000) 000 00 00">
 							</mat-form-field>
 
-							<button class="btn"
+							<button class="flex-center"
+								type="button"
 								(click)="deletePhone(i)">
 								<mat-icon color="primary">close</mat-icon>
 							</button>

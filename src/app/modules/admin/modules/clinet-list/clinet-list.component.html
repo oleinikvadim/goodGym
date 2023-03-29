@@ -74,17 +74,19 @@
 					mat-sort-header
 					*matHeaderCellDef> Emplane Date </th>
 				<td mat-cell
-					*matCellDef="let element"> {{element.ExpirationDate | date}} </td>
+					*matCellDef="let element">
+					{{element.ExpirationDate | date}}
+				</td>
 			</ng-container>
 
-			<!-- currentBalance Column -->
-			<ng-container matColumnDef="CurrentBalance">
+			<!-- Balance Column -->
+			<ng-container matColumnDef="Balance">
 				<th mat-header-cell
 					mat-sort-header
 					*matHeaderCellDef> Current Balance </th>
 				<td mat-cell
 					*matCellDef="let element">
-					{{element.Balance ? element.Balance: '---'}}
+					{{element.Balance | number:('1.2-6')}}
 				</td>
 			</ng-container>
 
@@ -96,6 +98,7 @@
 				(click)="displayOverlay(row)"></tr>
 		</table>
 
+		<app-empty-plug *ngIf="dataSource.data && dataSource.filteredData.length === 0"></app-empty-plug>
 	</main>
 
 </div>

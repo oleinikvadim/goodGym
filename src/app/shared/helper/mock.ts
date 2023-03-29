@@ -15,7 +15,7 @@ export const fakeClinets: Client[] = [
     "Address": "248 Chester Avenue, Ventress, West Virginia, 8147",
     "SubscriptionId": "5d2712b8a264e777aa9761c1",
     "ExpirationDate": "Mon Nov 18 2024 13:03:51 GMT+0000 (UTC)",
-    "Balance": "1410.80"
+    "Balance": 1410.80
   },
   {
     "Id": "5d2713f3dbf6d083150d635c",
@@ -31,7 +31,7 @@ export const fakeClinets: Client[] = [
     "Address": "935 Nova Court, Alfarata, Nebraska, 3237",
     "SubscriptionId": "5d2712b81b37d8d1088ca8ab",
     "ExpirationDate": "Mon Jul 15 2024 20:14:11 GMT+0000 (UTC)",
-    "Balance": "1524.95"
+    "Balance": 1524.95
   },
   {
     "Id": "5d2713f3e845f66c6c913bf0",
@@ -49,7 +49,7 @@ export const fakeClinets: Client[] = [
     "Address": "835 Grand Street, Juarez, Rhode Island, 2554",
     "SubscriptionId": "5d2712b8bf4218213ad98990",
     "ExpirationDate": "Sun Sep 15 2024 23:32:54 GMT+0000 (UTC)",
-    "Balance": "3323.54"
+    "Balance": 3323.54
   },
   {
     "Id": "5d2713f35125cba9a55f7b24",
@@ -65,7 +65,7 @@ export const fakeClinets: Client[] = [
     "Address": "891 Whitty Lane, Fidelis, Maryland, 4339",
     "SubscriptionId": "5d2712b8a264e777aa9761c1",
     "ExpirationDate": "Sat Mar 14 2020 19:34:41 GMT+0000 (UTC)",
-    "Balance": "1374.76"
+    "Balance": 1374.76
   },
   {
     "Id": "5d2713f369bc895191a2347a",
@@ -82,7 +82,7 @@ export const fakeClinets: Client[] = [
     "Address": "192 Kensington Street, Levant, Maine, 9124",
     "SubscriptionId": "5d2712b8bf4218213ad98990",
     "ExpirationDate": "Sun Sep 20 2020 11:54:58 GMT+0000 (UTC)",
-    "Balance": "1281.56"
+    "Balance": 1281.56
   },
   {
     "Id": "5d2713f34544bd78b9d83e3c",
@@ -101,7 +101,7 @@ export const fakeClinets: Client[] = [
     "Address": "606 Cleveland Street, Brutus, New York, 2135",
     "SubscriptionId": "5d2712b81b37d8d1088ca8ab",
     "ExpirationDate": "Tue Apr 04 2023 22:09:26 GMT+0000 (UTC)",
-    "Balance": "2226.51"
+    "Balance": 2226.51
   },
   {
     "Id": "5d2713f39b53599101188e18",
@@ -119,7 +119,7 @@ export const fakeClinets: Client[] = [
     "Address": "781 Cameron Court, Alleghenyville, Idaho, 465",
     "SubscriptionId": "5d2712b81b37d8d1088ca8ab",
     "ExpirationDate": "Fri May 10 2024 02:55:40 GMT+0000 (UTC)",
-    "Balance": "3065.47"
+    "Balance": 3065.47
   },
   {
     "Id": "5d2713f34dae39d4f5567108",
@@ -137,7 +137,7 @@ export const fakeClinets: Client[] = [
     "Address": "147 Etna Street, Day, Utah, 5413",
     "SubscriptionId": "5d2712b8a264e777aa9761c1",
     "ExpirationDate": "Thu Jan 11 2024 12:00:49 GMT+0000 (UTC)",
-    "Balance": "3882.04"
+    "Balance": 3882.04
   },
   {
     "Id": "5d2713f3461a73164fa886a9",
@@ -155,7 +155,7 @@ export const fakeClinets: Client[] = [
     "Address": "122 Troy Avenue, Walland, Colorado, 7442",
     "SubscriptionId": "5d2712b8a264e777aa9761c1",
     "ExpirationDate": "Mon Jan 04 2021 07:54:31 GMT+0000 (UTC)",
-    "Balance": "1571.48"
+    "Balance": 1571.48
   },
   {
     "Id": "5d2713f3f62f2852ef41852c",
@@ -173,7 +173,7 @@ export const fakeClinets: Client[] = [
     "Address": "182 Remsen Street, Jugtown, Wisconsin, 6806",
     "SubscriptionId": "5d2712b8bf4218213ad98990",
     "ExpirationDate": "Thu May 28 2020 18:10:40 GMT+0000 (UTC)",
-    "Balance": "3677.82"
+    "Balance": 3677.82
   },
   {
     "Id": "5d2713f307c9f50d1a7b5c6f",
@@ -191,7 +191,7 @@ export const fakeClinets: Client[] = [
     "Address": "544 Richards Street, Wheatfields, Pennsylvania, 2441",
     "SubscriptionId": "5d2712b8bf4218213ad98990",
     "ExpirationDate": "Mon Jul 29 2024 09:45:26 GMT+0000 (UTC)",
-    "Balance": "3115.92"
+    "Balance": 3115.92
   },
   {
     "Id": "5d2713f3bbd135c155da5676",
@@ -207,7 +207,7 @@ export const fakeClinets: Client[] = [
     "Address": "184 Tennis Court, Frystown, Palau, 4314",
     "SubscriptionId": "5d2712b8a264e777aa9761c1",
     "ExpirationDate": "Mon Sep 27 2021 13:24:10 GMT+0000 (UTC)",
-    "Balance": "3194.03"
+    "Balance": 3194.03
   },
   {
     "Id": "5d2713f3e22b8e9a0611bfa5",
@@ -226,7 +226,7 @@ export const fakeClinets: Client[] = [
     "Address": "555 Lincoln Terrace, Chesapeake, Tennessee, 9495",
     "SubscriptionId": "5d2712b8a264e777aa9761c1",
     "ExpirationDate": "Fri Mar 03 2023 13:30:19 GMT+0000 (UTC)",
-    "Balance": "3998.92"
+    "Balance": 3998.92
   },
   {
     "Id": "5d2713f3a660588b18e734e4",
@@ -244,7 +244,7 @@ export const fakeClinets: Client[] = [
     "Address": "392 Emerson Place, Edinburg, Arkansas, 2542",
     "SubscriptionId": "5d2712b8a264e777aa9761c1",
     "ExpirationDate": "Tue Dec 26 2023 16:37:08 GMT+0000 (UTC)",
-    "Balance": "1781.46"
+    "Balance": 1781.46
   },
   {
     "Id": "5d2713f39c022e48eded6f6b",
@@ -262,7 +262,7 @@ export const fakeClinets: Client[] = [
     "Address": "153 Kossuth Place, Wyano, Kentucky, 5469",
     "SubscriptionId": "5d2712b8bf4218213ad98990",
     "ExpirationDate": "Wed May 13 2020 09:33:08 GMT+0000 (UTC)",
-    "Balance": "2904.51"
+    "Balance": 2904.51
   },
   {
     "Id": "5d2713f30ebdcf13986dce7b",
@@ -281,7 +281,7 @@ export const fakeClinets: Client[] = [
     "Address": "535 Hicks Street, Englevale, Oregon, 8882",
     "SubscriptionId": "5d2712b8bf4218213ad98990",
     "ExpirationDate": "Sun Sep 22 2024 14:08:25 GMT+0000 (UTC)",
-    "Balance": "1990.83"
+    "Balance": 1990.83
   },
   {
     "Id": "5d2713f3dcc4338042b7e0f8",
@@ -299,7 +299,7 @@ export const fakeClinets: Client[] = [
     "Address": "425 Fleet Walk, Moscow, Alabama, 6664",
     "SubscriptionId": "5d2712b8a264e777aa9761c1",
     "ExpirationDate": "Sun Jul 25 2021 14:52:18 GMT+0000 (UTC)",
-    "Balance": "3716.73"
+    "Balance": 3716.73
   },
   {
     "Id": "5d2713f3abb6f390a168de3c",
@@ -316,7 +316,7 @@ export const fakeClinets: Client[] = [
     "Address": "664 Dobbin Street, Lorraine, Hawaii, 5657",
     "SubscriptionId": "5d2712b8a264e777aa9761c1",
     "ExpirationDate": "Fri Jan 12 2024 22:18:50 GMT+0000 (UTC)",
-    "Balance": "1963.59"
+    "Balance": 1963.59
   },
   {
     "Id": "5d2713f35e497d035c60d4da",
@@ -332,7 +332,7 @@ export const fakeClinets: Client[] = [
     "Address": "435 Rock Street, Loretto, Florida, 8960",
     "SubscriptionId": "5d2712b8bf4218213ad98990",
     "ExpirationDate": "Fri May 07 2021 19:55:32 GMT+0000 (UTC)",
-    "Balance": "1543.04"
+    "Balance": 1543.04
   },
   {
     "Id": "5d2713f3fc187d842df70fa0",
@@ -351,7 +351,7 @@ export const fakeClinets: Client[] = [
     "Address": "474 Vernon Avenue, Fairfield, Marshall Islands, 2001",
     "SubscriptionId": "5d2712b8a264e777aa9761c1",
     "ExpirationDate": "Wed Mar 01 2023 08:47:29 GMT+0000 (UTC)",
-    "Balance": "1334.54"
+    "Balance": 1334.54
   },
   {
     "Id": "5d2713f3735494f43a9851f3",
@@ -369,7 +369,7 @@ export const fakeClinets: Client[] = [
     "Address": "525 Bancroft Place, Rushford, Washington, 1761",
     "SubscriptionId": "5d2712b8a264e777aa9761c1",
     "ExpirationDate": "Thu Oct 19 2023 20:17:52 GMT+0000 (UTC)",
-    "Balance": "2820.67"
+    "Balance": 2820.67
   },
   {
     "Id": "5d2713f33f59962e5870be23",
@@ -387,7 +387,7 @@ export const fakeClinets: Client[] = [
     "Address": "620 Crescent Street, Sussex, North Dakota, 2656",
     "SubscriptionId": "5d2712b8bf4218213ad98990",
     "ExpirationDate": "Sat Oct 30 2021 12:25:16 GMT+0000 (UTC)",
-    "Balance": "2393.94"
+    "Balance": 2393.94
   },
   {
     "Id": "5d2713f351ba399ee6ccbbf7",
@@ -405,7 +405,7 @@ export const fakeClinets: Client[] = [
     "Address": "783 Pershing Loop, Northridge, Kansas, 707",
     "SubscriptionId": "5d2712b8bf4218213ad98990",
     "ExpirationDate": "Mon Apr 12 2021 12:35:43 GMT+0000 (UTC)",
-    "Balance": "3214.05"
+    "Balance": 3214.05
   },
   {
     "Id": "5d2713f39e2621361aa1237b",
@@ -421,7 +421,7 @@ export const fakeClinets: Client[] = [
     "Address": "118 Front Street, Hiwasse, Oklahoma, 5589",
     "SubscriptionId": "5d2712b81b37d8d1088ca8ab",
     "ExpirationDate": "Fri Mar 22 2024 15:23:21 GMT+0000 (UTC)",
-    "Balance": "1610.11"
+    "Balance": 1610.11
   },
   {
     "Id": "5d2713f3fa58f81da878fbcb",
@@ -437,7 +437,7 @@ export const fakeClinets: Client[] = [
     "Address": "952 Williamsburg Street, Trexlertown, Alaska, 4119",
     "SubscriptionId": "5d2712b8a264e777aa9761c1",
     "ExpirationDate": "Sat Aug 22 2020 15:08:29 GMT+0000 (UTC)",
-    "Balance": "3372.05"
+    "Balance": 3372.05
   },
   {
     "Id": "5d2713f3a915806b814dc7f5",
@@ -453,7 +453,7 @@ export const fakeClinets: Client[] = [
     "Address": "759 Lewis Avenue, Savage, Mississippi, 2201",
     "SubscriptionId": "5d2712b8a264e777aa9761c1",
     "ExpirationDate": "Thu Oct 05 2023 13:23:38 GMT+0000 (UTC)",
-    "Balance": "3807.92"
+    "Balance": 3807.92
   },
   {
     "Id": "5d2713f388b211001dc7c30c",
@@ -469,7 +469,7 @@ export const fakeClinets: Client[] = [
     "Address": "820 Howard Alley, Ruffin, Massachusetts, 9254",
     "SubscriptionId": "5d2712b81b37d8d1088ca8ab",
     "ExpirationDate": "Tue May 10 2022 23:44:18 GMT+0000 (UTC)",
-    "Balance": "3697.32"
+    "Balance": 3697.32
   },
   {
     "Id": "5d2713f357cc5c47cacd8c4f",
@@ -488,7 +488,7 @@ export const fakeClinets: Client[] = [
     "Address": "297 Montauk Court, Carlton, District Of Columbia, 4101",
     "SubscriptionId": "5d2712b8bf4218213ad98990",
     "ExpirationDate": "Thu Oct 22 2020 23:37:54 GMT+0000 (UTC)",
-    "Balance": "3897.53"
+    "Balance": 3897.53
   },
   {
     "Id": "5d2713f3704b9799949c9c22",
@@ -507,7 +507,7 @@ export const fakeClinets: Client[] = [
     "Address": "843 Caton Place, Brethren, Wyoming, 3494",
     "SubscriptionId": "5d2712b8bf4218213ad98990",
     "ExpirationDate": "Wed May 08 2024 02:16:19 GMT+0000 (UTC)",
-    "Balance": "2504.93"
+    "Balance": 2504.93
   },
   {
     "Id": "5d2713f3e6beeafac92dea59",
@@ -525,7 +525,7 @@ export const fakeClinets: Client[] = [
     "Address": "981 Lewis Place, Cobbtown, North Carolina, 4718",
     "SubscriptionId": "5d2712b81b37d8d1088ca8ab",
     "ExpirationDate": "Sun May 28 2023 23:51:27 GMT+0000 (UTC)",
-    "Balance": "1289.88"
+    "Balance": 1289.88
   },
   {
     "Id": "5d2713f32980b0b8cafcf6b1",
@@ -543,7 +543,7 @@ export const fakeClinets: Client[] = [
     "Address": "862 Powell Street, Beaverdale, New Hampshire, 2475",
     "SubscriptionId": "5d2712b8a264e777aa9761c1",
     "ExpirationDate": "Mon Nov 29 2021 18:30:35 GMT+0000 (UTC)",
-    "Balance": "2338.89"
+    "Balance": 2338.89
   },
   {
     "Id": "5d2713f354d3fdb4c3d624e3",
@@ -562,7 +562,7 @@ export const fakeClinets: Client[] = [
     "Address": "165 Lake Avenue, Jennings, Michigan, 1427",
     "SubscriptionId": "5d2712b8a264e777aa9761c1",
     "ExpirationDate": "Sun Nov 13 2022 15:09:37 GMT+0000 (UTC)",
-    "Balance": "3576.27"
+    "Balance": 3576.27
   },
   {
     "Id": "5d2713f3b9021851406bd8e6",
@@ -580,7 +580,7 @@ export const fakeClinets: Client[] = [
     "Address": "379 Creamer Street, Disautel, Nevada, 1225",
     "SubscriptionId": "5d2712b81b37d8d1088ca8ab",
     "ExpirationDate": "Fri Nov 27 2020 23:32:55 GMT+0000 (UTC)",
-    "Balance": "1088.42"
+    "Balance": 1088.42
   },
   {
     "Id": "5d2713f375d20011c561d9dc",
@@ -597,7 +597,7 @@ export const fakeClinets: Client[] = [
     "Address": "429 Madoc Avenue, Crisman, Guam, 5096",
     "SubscriptionId": "5d2712b8a264e777aa9761c1",
     "ExpirationDate": "Wed Jan 27 2021 23:49:23 GMT+0000 (UTC)",
-    "Balance": "1704.46"
+    "Balance": 1704.46
   },
   {
     "Id": "5d2713f3afdc2db483d34f99",
@@ -615,6 +615,6 @@ export const fakeClinets: Client[] = [
     "Address": "522 Miller Place, Fresno, American Samoa, 2010",
     "SubscriptionId": "5d2712b8a264e777aa9761c1",
     "ExpirationDate": "Mon Aug 28 2023 04:10:01 GMT+0000 (UTC)",
-    "Balance": "3019.22"
+    "Balance": 3019.22
   }
 ];
