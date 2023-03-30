@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { LoginKey } from 'src/app/shared/enum';
 import { ADMIN_PASS } from 'src/app/shared/helper';
 import { AuthenticationService } from 'src/app/shared/services';
-
-export enum LoginKey {
-	admin = 'admin',
-}
 
 @Component({
 	selector: 'login',
@@ -26,8 +23,8 @@ export class LoginComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.form.reset({
-			userName: 'admin',
-			password: 'admin',
+			userName: LoginKey.admin,
+			password: LoginKey.admin,
 		});
 	}
 
