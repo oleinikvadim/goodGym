@@ -1,18 +1,19 @@
-<div class="client-panel__wrapper">
-	<header class="client-panel__header">
+<div class="management__wrapper">
+	<header class="management__header">
 		<p class="text-bold">
 			{{client ? 'Client - ' + client.FirstName + ' ' + client.LastName : 'New Client'}}
 		</p>
-		<button class="btn btn-close btn-close-absolute"
+		<button class="btn btn-close btn-close--absolute"
 			(click)="closeSideNav()">
 			<mat-icon>close</mat-icon>
 		</button>
 	</header>
 
-	<body class="client-panel__body">
+	<div class="management__body">
 		<form [formGroup]="formGroup"
-			(submit)="onSubmit()">
-			<div class="form-body">
+			(submit)="onSubmit()"
+			class="management__form">
+			<div class="management__form-body">
 				<div class="form-group">
 					<div class="form-row">
 						<mat-form-field appearance="outline">
@@ -105,7 +106,7 @@
 
 						</div>
 						<div class="form-row">
-							<a class="btn btn-add-phone"
+							<a class="btn btn-icon"
 								(click)="addPhone()">
 								<mat-icon color="primary">add</mat-icon> Add Phone
 							</a>
@@ -125,7 +126,7 @@
 				</div>
 			</div>
 
-			<div class="client-panel__action">
+			<div class="management__action">
 				<button class="btn btn-primary btn-md btn-full"
 					type="submit"
 					[disabled]="!formGroup.valid">
@@ -141,7 +142,7 @@
 			</div>
 
 		</form>
-	</body>
+	</div>
 </div>
 
 <app-spinner *ngIf="fakeLoader"

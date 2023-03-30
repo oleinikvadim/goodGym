@@ -88,7 +88,7 @@ button,
 		align-items: center;
 		justify-content: center;
 
-		&.btn-close-absolute {
+		&.btn-close--absolute {
 			position: absolute;
 			top: 5px;
 			right: 5px;
@@ -129,5 +129,13 @@ button,
 				font-size: 34px;
 			}
 		}
+	}
+
+	&.btn-icon {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 10px;
+		color: $primary;
 	}
 }

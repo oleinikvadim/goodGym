@@ -1,0 +1,48 @@
+.content {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .content-page {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex: 1;
+
+    .content-page__header {
+      padding: 0 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 80px;
+
+      &.content-page__header--with-action {
+        justify-content: space-between;
+      }
+
+      .content-page__title {
+        text-transform: capitalize;
+      }
+    }
+
+    .content-page__body {
+      &.content-page__body--table {
+        position: relative;
+        flex: 1;
+        overflow: auto;
+
+        .mat-sort-header-container {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

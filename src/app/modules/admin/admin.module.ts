@@ -10,11 +10,11 @@ const routes: Routes = [
 		children: [
 			{
 				path: 'clients',
-				loadChildren: () => import('./modules/index').then(m => m.ClientListModule)
+				loadChildren: () => import('./modules/index').then(m => m.ClientsModule)
 			},
 			{
 				path: 'list',
-				loadChildren: () => import('./modules/index').then(m => m.ClientListModule)
+				loadChildren: () => import('./modules/index').then(m => m.ClientsModule)
 			},
 			{
 				path: '',

@@ -1,1 +1,1 @@
-export * from './clinet-list/client-list.modul';
+export * from './clients/clients.modul';

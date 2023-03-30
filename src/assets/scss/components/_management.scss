@@ -1,0 +1,164 @@
+.management-panel {
+  width: 100%;
+
+  @media (min-width: $phone) {
+    width: fit-content;
+  }
+}
+
+.management {
+  display: block;
+  background-color: $white;
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .management__wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    .toggle {
+      font-size: 13px;
+    }
+
+    .radio {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 20px;
+
+      @media (min-width: $phone) {
+        gap: 0;
+        justify-content: space-between;
+      }
+    }
+
+    .date-picker {
+      @media (min-width: $phone) {
+        width: 48%;
+      }
+    }
+  }
+
+  .management__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+
+    @media (min-width: $phone) {
+      padding: 20px;
+    }
+
+    mat-icon {
+      cursor: pointer;
+      margin-left: auto;
+
+      &:hover {
+        opacity: $opacity-lg;
+      }
+    }
+  }
+
+  .management__body {
+    flex: 1;
+    height: inherit;
+  }
+
+  .management__action {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px;
+
+    @media (min-width: $phone) {
+      padding: 20px;
+    }
+  }
+
+  .management__form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    mat-form-field {
+      font-size: 12px;
+    }
+
+    .management__form-body {
+      overflow: auto;
+      padding: 10px;
+      max-height: calc(100svh - 110px);
+      border-top: 1px solid $light-grey;
+      border-bottom: 1px solid $light-grey;
+      flex: 1;
+
+      @media (min-width: $phone) {
+        max-height: calc(100svh - 140px);
+        padding: 20px;
+      }
+
+      @media (min-width: $tablet) {
+        max-height: calc(100svh - 160px);
+      }
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+
+      @media (min-width: $phone) {
+        margin-bottom: 30px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 10px;
+
+      @media (min-width: $phone) {
+        align-items: center;
+        flex-direction: row;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &.form-row--phone {
+        flex-direction: row;
+
+        .mat-form-field {
+          width: 100%;
+        }
+      }
+
+      .full-width {
+        width: 100%;
+      }
+    }
+
+    ::ng-deep .mat-form-field-infix {
+      display: flex;
+      flex-direction: row;
+    }
+
+    ::ng-deep .mat-form-field-wrapper {
+      padding-bottom: 0;
+    }
+  }
+
+}

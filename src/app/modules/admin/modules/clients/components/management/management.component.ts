@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
@@ -9,11 +9,11 @@ import { ConfirmDialogService } from 'src/app/shared/modules/confirm-dialog/conf
 import { MockApiService } from 'src/app/shared/services';
 
 @Component({
-	selector: 'app-client-panel',
-	templateUrl: './client-panel.component.html',
-	styleUrls: ['./client-panel.component.scss'],
+	selector: 'app-management',
+	templateUrl: './management.component.html'
 })
-export class ClientPanelComponent implements OnInit {
+export class ManagementComponent implements OnInit {
+	@HostBinding('class') class = 'management';
 	client: Client;
 	closeSubject$ = new Subject();
 	clientAction$ = new Subject<boolean>();
