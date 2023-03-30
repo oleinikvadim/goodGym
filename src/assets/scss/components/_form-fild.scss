@@ -1,0 +1,21 @@
+.form-field {
+  &.form-fild--nogap {
+    &.mat-form-field .mat-form-field-wrapper {
+      padding: 0;
+    }
+  }
+
+  &.form-field--sm.mat-form-field {
+    font-size: 12px;
+  }
+
+  &.form-field--md.mat-form-field {
+    font-size: 14px;
+  }
+
+  .mat-icon {
+    &.mat-icon--hide {
+      opacity: 0;
+    }
+  }
+}

@@ -16,7 +16,8 @@
 			<div class="management__form-body">
 				<div class="form-group">
 					<div class="form-row">
-						<mat-form-field appearance="outline">
+						<mat-form-field appearance="outline"
+							class="form-field form-field--sm form-fild--nogap">
 							<mat-label>First name</mat-label>
 							<input matInput
 								placeholder="First name"
@@ -24,7 +25,8 @@
 								formControlName="FirstName">
 						</mat-form-field>
 
-						<mat-form-field appearance="outline">
+						<mat-form-field appearance="outline"
+							class="form-field form-field--sm form-fild--nogap">
 							<mat-label>Last Name</mat-label>
 							<input matInput
 								placeholder="Last Name"
@@ -36,7 +38,7 @@
 					<div class="form-row">
 
 						<mat-form-field appearance="outline"
-							class="date-picker"
+							class="date-picker form-field form-field--sm form-fild--nogap"
 							(click)="picker.open()">
 							<mat-label>Choose a date</mat-label>
 							<input matInput
@@ -64,7 +66,7 @@
 				<div class="form-group">
 					<div class="form-row">
 						<mat-form-field appearance="outline"
-							class="full-width">
+							class="full-width form-field form-field--sm form-fild--nogap">
 							<mat-label>Email</mat-label>
 							<input matInput
 								placeholder="Email"
@@ -75,7 +77,7 @@
 
 					<div class="form-row">
 						<mat-form-field appearance="outline"
-							class="full-width">
+							class="full-width form-field form-field--sm form-fild--nogap">
 							<mat-label>Address</mat-label>
 							<input matInput
 								placeholder="address"
@@ -89,7 +91,8 @@
 					<div formArrayName="Phones">
 						<div class="form-row form-row--phone"
 							*ngFor="let phoneFormGroup of getFormsPhonesArray.controls; index as i">
-							<mat-form-field appearance="outline">
+							<mat-form-field appearance="outline"
+								class="form-field form-field--sm form-fild--nogap">
 								<mat-label>Phone {{i + 1}}</mat-label>
 								<input matInput
 									placeholder="Phone"

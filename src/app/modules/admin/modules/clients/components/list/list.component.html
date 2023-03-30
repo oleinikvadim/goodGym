@@ -2,14 +2,21 @@
   <header class="content-page__header content-page__header--with-action">
     <h3 class="content-page__title">Clinet</h3>
     <div class="content-page__header-action">
-      <mat-form-field appearance="standard">
+      <mat-form-field appearance="outline"
+        class="form-field form-field--md form-fild--nogap">
         <mat-label>
           Filter
         </mat-label>
         <input matInput
           (keyup)="applyFilter($event)"
-          placeholder="Ex. ium"
-          #input>
+          placeholder="Client information"
+          #filterInput>
+        <mat-icon matSuffix
+          (click)="cleanFilter()"
+          [class.mat-icon--hide]="filterInput.value.length === 0">
+          <close-button [class]="'btn-close--primary'">
+          </close-button>
+        </mat-icon>
       </mat-form-field>
     </div>
   </header>
@@ -102,7 +109,7 @@
         (click)="displayOverlay(row)"></tr>
     </table>
 
-    <empty-plug *ngIf="dataSource.data && dataSource.filteredData.length === 0"></empty-plug>
+    <empty-plug *ngIf="dataSource.data && dataSource.filteredData.length === 0 && !fakeLoader"></empty-plug>
   </main>
 
 </div>

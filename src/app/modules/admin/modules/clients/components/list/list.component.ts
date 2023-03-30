@@ -15,6 +15,7 @@ import { ManagementComponent } from '../management/management.component';
   templateUrl: './list.component.html'
 })
 export class ListComponent implements OnInit {
+  @ViewChild('filterInput') filterInput: ElementRef;
   @HostBinding('class') class = 'content-wrapper';
   @ViewChild(MatSort) set matSort(sort: MatSort) {
     this.dataSource.sort = sort;
@@ -106,6 +107,11 @@ export class ListComponent implements OnInit {
   applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  cleanFilter(): void {
+    this.filterInput.nativeElement.value = '';
+    this.dataSource.filter = '';
   }
 
   private setClientId(params?: string): void {
