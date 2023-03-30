@@ -20,7 +20,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ConfirmDialogComponent, EmptyPlugComponent, SpinnerComponent } from './components';
+import { CloseButtonComponent, ConfirmDialogComponent, EmptyPlugComponent, SpinnerComponent } from './components';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { ConfirmDialogService } from './services';
 
@@ -29,7 +29,8 @@ export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 const REUSE_COMPONENT = [
 	SpinnerComponent,
 	EmptyPlugComponent,
-	ConfirmDialogComponent
+	ConfirmDialogComponent,
+	CloseButtonComponent
 ];
 
 const MATERIAL_COMPONENTS = [
@@ -76,7 +77,8 @@ const LIBRIARY = [
 		LIBRIARY,
 	],
 	declarations: [
-		REUSE_COMPONENT
+		REUSE_COMPONENT,
+		CloseButtonComponent
 	],
 	providers: [
 		MatDatepickerModule,

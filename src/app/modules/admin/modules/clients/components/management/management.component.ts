@@ -119,6 +119,10 @@ export class ManagementComponent implements OnInit {
 			});
 	}
 
+	returnClientTitle(): string {
+		return this.client ? this.client.FirstName + ' ' + this.client.LastName : 'New Client';
+	}
+
 	private loadAndCloseSideNav(): void {
 		setTimeout(() => {
 			this.fakeLoader = false;

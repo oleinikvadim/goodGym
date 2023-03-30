@@ -1,12 +1,12 @@
 <div class="management__wrapper">
 	<header class="management__header">
-		<p class="text-bold">
-			{{client ? 'Client - ' + client.FirstName + ' ' + client.LastName : 'New Client'}}
-		</p>
-		<button class="btn btn-close btn-close--absolute"
-			(click)="closeSideNav()">
-			<mat-icon>close</mat-icon>
-		</button>
+		<h6 class="text-bold text-ellipsis cursor-pointer"
+			[title]="returnClientTitle()">
+			{{returnClientTitle()}}
+		</h6>
+		<close-button (click)="closeSideNav()"
+			[class]="'btn-close--secondary btn-close--absolute'">
+		</close-button>
 	</header>
 
 	<div class="management__body">
@@ -98,11 +98,9 @@
 									mask="+00 (000) 000 00 00">
 							</mat-form-field>
 
-							<button class="flex-center"
-								type="button"
-								(click)="deletePhone(i)">
-								<mat-icon color="primary">close</mat-icon>
-							</button>
+							<close-button (click)="deletePhone(i)"
+								[class]="'btn-close--primary'">
+							</close-button>
 
 						</div>
 						<div class="form-row">

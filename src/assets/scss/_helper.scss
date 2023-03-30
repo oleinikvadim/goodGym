@@ -11,3 +11,13 @@
 .pointer-ivents-none {
   pointer-events: none;
 }
+
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

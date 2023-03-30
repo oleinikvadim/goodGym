@@ -1,8 +1,9 @@
-.management-panel {
+.cdk-overlay-pane.management-panel {
   width: 100%;
 
   @media (min-width: $phone) {
     width: fit-content;
+    max-width: 450px;
   }
 }
 
@@ -50,8 +51,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+    max-width: 90%;
 
     @media (min-width: $phone) {
+      max-width: 100%;
       padding: 20px;
     }
 
@@ -96,18 +99,18 @@
     .management__form-body {
       overflow: auto;
       padding: 10px;
-      max-height: calc(100svh - 110px);
+      max-height: calc(100svh - 115px);
       border-top: 1px solid $light-grey;
       border-bottom: 1px solid $light-grey;
       flex: 1;
 
       @media (min-width: $phone) {
-        max-height: calc(100svh - 140px);
+        max-height: calc(100svh - 145px);
         padding: 20px;
       }
 
       @media (min-width: $tablet) {
-        max-height: calc(100svh - 160px);
+        max-height: calc(100svh - 165px);
       }
     }
 
@@ -140,6 +143,7 @@
 
       &.form-row--phone {
         flex-direction: row;
+        align-items: center;
 
         .mat-form-field {
           width: 100%;
@@ -151,12 +155,12 @@
       }
     }
 
-    ::ng-deep .mat-form-field-infix {
+    .mat-form-field-infix {
       display: flex;
       flex-direction: row;
     }
 
-    ::ng-deep .mat-form-field-wrapper {
+    .mat-form-field-wrapper {
       padding-bottom: 0;
     }
   }

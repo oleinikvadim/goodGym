@@ -1,4 +1,6 @@
 p {
-  text-align: center;
-  padding: 20px 0;
+  height: calc(100% - 135px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

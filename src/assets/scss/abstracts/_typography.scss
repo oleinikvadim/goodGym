@@ -74,11 +74,11 @@ h5,
 
 h6,
 .h6 {
-	font-size: calc($is-27 / 1.2);
+	font-size: calc($is-25 / 1.2);
 	font-weight: $font-weight-bold;
 
 	@media (min-width: $tablet) {
-		font-size: $is-27;
+		font-size: $is-25;
 	}
 }
 

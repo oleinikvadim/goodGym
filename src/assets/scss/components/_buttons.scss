@@ -87,16 +87,30 @@ button,
 
 		&.btn-close--absolute {
 			position: absolute;
-			top: 5px;
+			top: 10px;
 			right: 5px;
+
+			@media (min-width: $phone) {
+				top: 5px;
+			}
 		}
 
-		&:hover {
+		&.btn-close--primary {
 
 			mat-icon {
 				color: $primary;
 			}
 		}
+
+		&.btn-close--secondary {
+			&:hover {
+
+				mat-icon {
+					color: $primary;
+				}
+			}
+		}
+
 	}
 
 	&.btn-add {

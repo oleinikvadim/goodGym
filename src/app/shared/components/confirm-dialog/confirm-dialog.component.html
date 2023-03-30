@@ -1,9 +1,9 @@
 <div class="dialog">
   <div class="dialog__header">
     <p class="dialog__header-title">{{ dialogData.title }}</p>
-    <button class="btn btn-close btn-close--absolute">
-      <mat-icon (click)="cancel()">close</mat-icon>
-    </button>
+    <close-button (click)="cancel()"
+      [class]="'btn-close--secondary btn-close--absolute'">
+    </close-button>
   </div>
   <div class="dialog__body">
     <p class="dialog__body-message">{{ dialogData.message }}</p>
