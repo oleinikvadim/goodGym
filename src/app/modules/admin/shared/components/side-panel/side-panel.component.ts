@@ -2,7 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { ADMIN_PASS, LOGIN } from 'src/app/shared/helper';
-import { ConfirmDialogService } from 'src/app/shared/modules/confirm-dialog/confirm-dialog.service';
+import { ConfirmDialogService } from 'src/app/shared/services';
 
 @Component({
 	selector: 'side-panel',

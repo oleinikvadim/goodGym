@@ -20,15 +20,16 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ConfirmDialogModule } from './modules';
-import { EmptyPlugComponent, SpinnerComponent } from './components';
+import { ConfirmDialogComponent, EmptyPlugComponent, SpinnerComponent } from './components';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
+import { ConfirmDialogService } from './services';
 
 export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
 const REUSE_COMPONENT = [
 	SpinnerComponent,
-	EmptyPlugComponent
+	EmptyPlugComponent,
+	ConfirmDialogComponent
 ];
 
 const MATERIAL_COMPONENTS = [
@@ -53,7 +54,6 @@ const LIBRIARY = [
 	AngularFullpageModule,
 	SwiperModule,
 	GoogleMapsModule,
-	ConfirmDialogModule,
 	NgxMaskModule.forRoot(),
 ];
 
@@ -80,6 +80,7 @@ const LIBRIARY = [
 	],
 	providers: [
 		MatDatepickerModule,
+		ConfirmDialogService
 	],
 })
 export class SharedModule { }

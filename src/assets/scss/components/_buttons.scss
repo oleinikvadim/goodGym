@@ -28,12 +28,9 @@ button,
 		color: $white;
 	}
 
-	&.btn-outline {
-		border: 1px solid $grey;
-	}
-
 	&.btn-outline-primary {
-		border: 1px solid $primary;
+		box-shadow: 0 0 0 1px $primary inset;
+
 
 		&:hover {
 			background-color: $primary;
@@ -42,12 +39,12 @@ button,
 	}
 
 	&.btn-outline {
-		border: 1px solid $grey;
+		box-shadow: 0 0 0 1px $grey inset;
 
 		&:hover {
 			background-color: $red;
 			color: $white;
-			border: 1px solid $red;
+			box-shadow: 0 0 0 1px $red inset;
 		}
 	}
 

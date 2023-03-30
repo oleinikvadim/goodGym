@@ -6,8 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./spinner.component.scss']
 })
 export class SpinnerComponent {
-  @Input() diameter: number;
-  @Input() overlay: boolean;
+  @Input() diameter: number = 100;
+  @Input() overlay: boolean = true;
   @Input() color: string;
   constructor() { }
 

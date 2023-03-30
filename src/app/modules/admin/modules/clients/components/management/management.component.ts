@@ -5,8 +5,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { GernderEnum } from 'src/app/shared/enum';
 import { CLIENT_ID, FAKE_LOADER_TIME } from 'src/app/shared/helper';
 import { Client } from 'src/app/shared/models/client.model';
-import { ConfirmDialogService } from 'src/app/shared/modules/confirm-dialog/confirm-dialog.service';
-import { MockApiService } from 'src/app/shared/services';
+import { ConfirmDialogService, MockApiService } from 'src/app/shared/services';
 
 @Component({
 	selector: 'management',
