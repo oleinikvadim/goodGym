@@ -1,11 +1,11 @@
-.link-more {
+.link-icon {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	width: fit-content;
 
 	&:hover {
-		.link-more_text {
+		.link-icon__text {
 			opacity: $opacity-lg;
 		}
 
@@ -14,7 +14,7 @@
 		}
 	}
 
-	.link-more_text {
+	.link-icon__text {
 		font-family: "Muli";
 		font-size: $is-31;
 		font-weight: $font-weight-bold;

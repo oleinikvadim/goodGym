@@ -1,6 +1,6 @@
 @import "variables";
 
-.sign-up_top {
+.sign-up__top {
 	margin-bottom: 40px;
 
 	&>* {
@@ -29,7 +29,7 @@
 	}
 }
 
-.sign-up_bottom {
+.sign-up__bottom {
 	.form-group {
 		height: inherit;
 

@@ -7,12 +7,12 @@
 	</div>
 </div>
 
-<div class="nav-wrapper"
+<div class="landing-navigation"
 	*ngIf="toggleMenuIsActive"
 	[@navigationAnimation]>
-	<nav class="nav"
+	<nav class="landing-navigation__wrapper"
 		id="menu">
-		<ul class="nav-menu">
+		<ul class="landing-navigation__menu">
 			<li>
 				<a href="#welcome"
 					[class.active]="activeAnchor === sectionName.welcome"
@@ -45,7 +45,7 @@
 	[options]="fullPageConfig"
 	(ref)="getFullPageRef($event)">
 
-	<section class="section section-welcome fp-auto-height-responsive">
+	<section class="section welcome-section fp-auto-height-responsive">
 		<welcome></welcome>
 	</section>
 
@@ -61,7 +61,7 @@
 		<slider-section></slider-section>
 	</section>
 
-	<section class="section section-panorama fp-auto-height-responsive">
+	<section class="section panorama-section fp-auto-height-responsive">
 		<panorama></panorama>
 	</section>
 
@@ -69,7 +69,7 @@
 		<location></location>
 	</section>
 
-	<section class="section section-signUp fp-auto-height-responsive">
+	<section class="section sign-up-section fp-auto-height-responsive">
 		<sing-up></sing-up>
 	</section>
 

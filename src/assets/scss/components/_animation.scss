@@ -2,10 +2,12 @@
 	.section.active {
 		.anim {
 			opacity: $opacity;
-			&.anim-right {
+
+			&.anim--right {
 				transform: translateX(0);
 			}
-			&.anim-left {
+
+			&.anim--left {
 				transform: translateX(0);
 			}
 		}
@@ -14,10 +16,12 @@
 	.anim {
 		transition: $base-transition-sm;
 		opacity: 0;
-		&.anim-right {
+
+		&.anim--right {
 			transform: translateX(100vw);
 		}
-		&.anim-left {
+
+		&.anim--left {
 			transform: translateX(-100vw);
 		}
 	}
