@@ -100,11 +100,6 @@ export class ListComponent implements OnInit {
       });
   }
 
-  applyFilter(event: Event): void {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
   private setClientId(params?: string): void {
     this.router.navigate([], {
       queryParams: {
