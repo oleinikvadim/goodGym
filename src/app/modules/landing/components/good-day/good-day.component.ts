@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-	selector: 'app-good-day',
+	selector: 'good-day',
 	templateUrl: './good-day.component.html',
 	styleUrls: ['./good-day.component.scss']
 })

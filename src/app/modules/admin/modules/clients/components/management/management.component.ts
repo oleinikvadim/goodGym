@@ -9,7 +9,7 @@ import { ConfirmDialogService } from 'src/app/shared/modules/confirm-dialog/conf
 import { MockApiService } from 'src/app/shared/services';
 
 @Component({
-	selector: 'app-management',
+	selector: 'management',
 	templateUrl: './management.component.html'
 })
 export class ManagementComponent implements OnInit {

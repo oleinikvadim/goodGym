@@ -102,7 +102,7 @@
         (click)="displayOverlay(row)"></tr>
     </table>
 
-    <app-empty-plug *ngIf="dataSource.data && dataSource.filteredData.length === 0"></app-empty-plug>
+    <empty-plug *ngIf="dataSource.data && dataSource.filteredData.length === 0"></empty-plug>
   </main>
 
 </div>
@@ -114,8 +114,8 @@
   <mat-icon>add</mat-icon>
 </button>
 
-<app-spinner *ngIf="fakeLoader"
+<spinner *ngIf="fakeLoader"
   [diameter]="100"
   [overlay]="true"
   [color]="'spinner-primary'">
-</app-spinner>
+</spinner>

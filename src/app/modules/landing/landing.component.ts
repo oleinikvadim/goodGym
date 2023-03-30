@@ -5,7 +5,7 @@ import { SectionName } from 'src/app/shared/enum';
 import { media, navigationAnimation } from 'src/app/shared/helper';
 
 @Component({
-	selector: 'app-landing',
+	selector: 'landing',
 	templateUrl: './landing.component.html',
 	styleUrls: ['./landing.component.scss'],
 	animations: [navigationAnimation()]

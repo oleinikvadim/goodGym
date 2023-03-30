@@ -5,7 +5,7 @@ import { ADMIN_PASS, LOGIN } from 'src/app/shared/helper';
 import { ConfirmDialogService } from 'src/app/shared/modules/confirm-dialog/confirm-dialog.service';
 
 @Component({
-	selector: 'app-side-panel',
+	selector: 'side-panel',
 	templateUrl: './side-panel.component.html',
 	styleUrls: ['./side-panel.component.scss']
 })

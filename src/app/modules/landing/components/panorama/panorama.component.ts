@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 @Component({
-	selector: 'app-panorama',
+	selector: 'panorama',
 	templateUrl: './panorama.component.html',
 	styleUrls: ['./panorama.component.scss']
 })

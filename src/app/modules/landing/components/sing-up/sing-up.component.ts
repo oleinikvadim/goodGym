@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-	selector: 'app-sing-up',
+	selector: 'sing-up',
 	templateUrl: './sing-up.component.html',
 	styleUrls: ['./sing-up.component.scss']
 })

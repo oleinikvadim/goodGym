@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-	selector: 'app-map',
+	selector: 'map',
 	templateUrl: './map.component.html'
 })
 export class MapComponent {

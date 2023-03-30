@@ -1,7 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
 
 @Component({
-	selector: 'app-clients',
+	selector: 'clients',
 	templateUrl: './clients.component.html',
 })
 export class ClinetsComponent {

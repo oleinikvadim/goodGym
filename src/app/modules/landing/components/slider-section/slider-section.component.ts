@@ -3,7 +3,7 @@ import SwiperCore, { SwiperOptions, Pagination, Thumbs } from 'swiper';
 SwiperCore.use([Pagination, Thumbs]);
 
 @Component({
-	selector: 'app-slider-section',
+	selector: 'slider-section',
 	templateUrl: './slider-section.component.html',
 	styleUrls: ['./slider-section.component.scss']
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-empty-plug',
+  selector: 'empty-plug',
   templateUrl: './empty-plug.component.html',
   styleUrls: ['./empty-plug.component.scss']
 })
