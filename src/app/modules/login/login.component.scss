@@ -13,7 +13,7 @@
 	overflow: hidden;
 }
 
-.login {
+.login-wrapper {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -39,7 +39,7 @@
 }
 
 
-.form-wrapper {
+.login-form {
 	background-color: $white;
 	padding: 10px;
 	width: 100%;
@@ -64,8 +64,4 @@
 		height: 47px;
 	}
 
-	.error {
-		font-size: 10px;
-		color: $red;
-	}
 }

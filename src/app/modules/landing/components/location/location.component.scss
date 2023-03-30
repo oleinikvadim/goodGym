@@ -10,12 +10,14 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+
 	@media (min-width: $tablet-lg) {
 		flex-direction: row;
 	}
 
-	& > li {
+	&>li {
 		width: 100%;
+
 		@media (min-width: $tablet-lg) {
 			width: 50%;
 		}
@@ -23,7 +25,8 @@
 		&:last-child {
 			height: 400px;
 			position: relative;
-			@media (min-width: $tablet-lg) {
+
+			@media (min-width: $tablet) {
 				height: 100%;
 			}
 		}
@@ -35,15 +38,16 @@
 	}
 
 	.location-about {
-		padding: 30px 0;
+		padding: 40px 0;
 
-		.location-about__top {
+		.location-about_top {
 			margin-bottom: 30px;
 
 			h2 {
 				color: $white;
 				margin-bottom: 20px;
-				@media (max-width: $tablet) {
+
+				@media (min-width: $tablet) {
 					margin-bottom: 30px;
 				}
 			}
@@ -57,7 +61,8 @@
 			font-family: "Muli";
 			display: flex;
 			flex-direction: column;
-			@media (max-width: $tablet) {
+
+			@media (min-width: $tablet) {
 				margin-bottom: 20px;
 			}
 
@@ -65,9 +70,14 @@
 				color: $white;
 				font-size: 27px;
 				font-weight: 700;
-				margin-bottom: 33px;
+				margin-bottom: 20px;
 
-				@media (max-width: $tablet) {
+				@media (min-width: $phone) {
+					margin-bottom: 33px;
+				}
+
+				@media (min-width: $tablet) {
+					margin-bottom: 33px;
 					font-size: 16px;
 				}
 
@@ -80,18 +90,37 @@
 					display: flex;
 					align-items: center;
 					transition: $base-transition;
+					width: fit-content;
+
 					&:hover {
 						opacity: $opacity-lg;
 					}
+
+					p {
+						font-size: 15px;
+						margin-top: -5px;
+
+						@media (min-width: $tablet) {
+							margin-top: -10px;
+							font-size: 25px;
+						}
+					}
+
 				}
 
 				.image-container {
-					width: 40px;
-					height: 40px;
+					width: 30px;
+					height: 30px;
 					display: flex;
 					justify-content: center;
 					align-items: center;
 					margin-right: 15px;
+
+					@media (min-width: $tablet) {
+						width: 40px;
+						height: 40px;
+					}
+
 					img {
 						width: 100%;
 						height: 100%;

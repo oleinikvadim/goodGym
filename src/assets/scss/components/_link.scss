@@ -3,28 +3,38 @@
 	flex-direction: row;
 	align-items: center;
 	width: fit-content;
+
 	&:hover {
+		.link-more_text {
+			opacity: $opacity-lg;
+		}
+
 		.rectange-right {
 			transform: translateX(10px) rotate(90deg);
 		}
 	}
 
-	&_text {
+	.link-more_text {
 		font-family: "Muli";
 		font-size: $is-31;
 		font-weight: $font-weight-bold;
 		margin-right: 20px;
 		color: $primary;
+		transition: $base-transition;
+		line-height: 1;
+
 		@media (max-width: 840px) {
 			font-size: $is-25;
 		}
 	}
+
 	.rectange-right {
 		width: 34px;
 		height: 36px;
 		transition: $base-transition;
 		fill: $primary;
 		transform: rotate(90deg);
+
 		&:hover {
 			.rectange-right {
 				transform: translateX(40px) rotate(90deg);

@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
 import {
-	GoodDaySectionComponent,
+	GoodDayComponent,
 	LocationComponent,
 	PanoramaComponent,
-	SectionWelcomeComponent,
+	WelcomeComponent,
 	SliderSectionComponent,
 	MapComponent,
 	SingUpComponent,
@@ -23,8 +22,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
 	exports: [],
 	declarations: [
 		LandingComponent,
-		SectionWelcomeComponent,
-		GoodDaySectionComponent,
+		WelcomeComponent,
+		GoodDayComponent,
 		SliderSectionComponent,
 		PanoramaComponent,
 		LocationComponent,

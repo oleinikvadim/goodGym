@@ -14,3 +14,7 @@
 mat-icon {
 	transition: $base-transition;
 }
+
+input::placeholder {
+	opacity: 0.2;
+}

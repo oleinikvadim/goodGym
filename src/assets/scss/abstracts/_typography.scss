@@ -1,6 +1,6 @@
-h1,
 .h1 {
 	font-size: calc($is-96 / 2);
+	font-weight: $font-weight-bold;
 
 	@media (min-width: $phone) {
 		font-size: calc($is-96 / 1.5);
@@ -15,9 +15,23 @@ h1,
 	}
 }
 
+h1 {
+	font-size: calc($is-48 / 1.5);
+	font-weight: $font-weight-bold;
+
+	@media (min-width: $tablet) {
+		font-size: calc($is-48 / 1.2);
+	}
+
+	@media (min-width: $tablet-lg) {
+		font-size: $is-48;
+	}
+}
+
 h2,
 .h2 {
 	font-size: calc($is-48 / 1.5);
+	font-weight: $font-weight-bold;
 
 	@media (min-width: $tablet) {
 		font-size: calc($is-48 / 1.2);
@@ -31,6 +45,7 @@ h2,
 h3,
 .h3 {
 	font-size: calc($is-32 / 1.2);
+	font-weight: $font-weight-bold;
 
 	@media (min-width: $tablet) {
 		font-size: $is-32;
@@ -40,6 +55,7 @@ h3,
 h4,
 .h4 {
 	font-size: calc($is-31/ 1.2);
+	font-weight: $font-weight-bold;
 
 	@media (min-width: $tablet) {
 		font-size: $is-31;
@@ -49,6 +65,7 @@ h4,
 h5,
 .h5 {
 	font-size: calc($is-31 / 1.2);
+	font-weight: $font-weight-bold;
 
 	@media (min-width: $tablet) {
 		font-size: $is-31;
@@ -58,6 +75,7 @@ h5,
 h6,
 .h6 {
 	font-size: calc($is-27 / 1.2);
+	font-weight: $font-weight-bold;
 
 	@media (min-width: $tablet) {
 		font-size: $is-27;

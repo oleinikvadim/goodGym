@@ -11,3 +11,11 @@
 	z-index: 10;
 	pointer-events: none;
 }
+
+.panorama {
+	height: 500px;
+
+	@media (min-width: $tablet) {
+		height: 100vh;
+	}
+}
