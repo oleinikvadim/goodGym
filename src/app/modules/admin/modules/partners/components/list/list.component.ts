@@ -24,7 +24,6 @@ export class ListComponent implements OnInit {
   dataSource = new MatTableDataSource<Client>();
   fakeLoader = false;
   clientId: string | null;
-  clientTitle: string | undefined;
   private overlayRef!: OverlayRef;
   private unsubscribe$ = new Subject<boolean>();
   constructor(
@@ -38,8 +37,6 @@ export class ListComponent implements OnInit {
     if (this.clientId) {
       this.displayOverlay();
     }
-
-    this.clientTitle = this.route.parent?.snapshot.url[0].path;
   }
 
   ngOnInit(): void {

@@ -1,6 +1,6 @@
 <div class="content-page">
   <header class="content-page__header content-page__header--with-action">
-    <h3 class="content-page__title">Clinet</h3>
+    <h3 class="content-page__title">Partners</h3>
     <div class="content-page__header-action">
       <mat-form-field appearance="standard">
         <mat-label>
@@ -26,7 +26,7 @@
       <ng-container matColumnDef="FirstName">
         <th mat-header-cell
           mat-sort-header
-          *matHeaderCellDef> First Name</th>
+          *matHeaderCellDef> Partner First Name</th>
         <td mat-cell
           *matCellDef="let element"
           [title]="element.FirstName"> {{element.FirstName}} </td>
@@ -36,7 +36,7 @@
       <ng-container matColumnDef="LastName">
         <th mat-header-cell
           mat-sort-header
-          *matHeaderCellDef> Last Name </th>
+          *matHeaderCellDef> Partner Last Name </th>
         <td mat-cell
           *matCellDef="let element"
           [title]="element.LastName"> {{element.LastName}} </td>

@@ -20,11 +20,9 @@ export class ManagementComponent implements OnInit {
 	formGroup: FormGroup = new FormGroup({
 		FirstName: new FormControl('', [Validators.required]),
 		LastName: new FormControl('', [Validators.required]),
-		DateOfBirth: new FormControl(null),
 		Gender: new FormControl(null, [Validators.required]),
 		Email: new FormControl('', [Validators.required, Validators.email]),
 		Address: new FormControl(''),
-		Phones: new FormArray([]),
 		IsActive: new FormControl(null),
 		ExpirationDate: new FormControl(''),
 		Balance: new FormControl(null),
@@ -70,16 +68,6 @@ export class ManagementComponent implements OnInit {
 		return this.formGroup.controls.Phones as FormArray;
 	}
 
-	addPhone(phone?: string): void {
-		phone
-			? this.getFormsPhonesArray.push(new FormControl(phone))
-			: this.getFormsPhonesArray.push(new FormControl(''));
-	}
-
-	deletePhone(phoneId: number): void {
-		this.getFormsPhonesArray.removeAt(phoneId);
-	}
-
 	closeSideNav(): void {
 		this.closeSubject$.next(true);
 		this.formGroup.reset();
@@ -98,7 +86,7 @@ export class ManagementComponent implements OnInit {
 
 	deleteClientDiaolg(client: Client) {
 		const options = {
-			title: 'Delete client',
+			title: 'Delete partner',
 			message: `Are you sure you want to delete ${client.FirstName} ${client.LastName}?`,
 			cancelText: 'Cancel',
 			confirmText: 'Yes'
@@ -131,10 +119,8 @@ export class ManagementComponent implements OnInit {
 	}
 
 	private init(): void {
-		this.client.Phones.forEach(phone => this.addPhone(phone));
 		this.formGroup.reset(this.client);
 		this.formGroup.patchValue({
-			DateOfBirth: new Date(this.client.DateOfBirth),
 			Balance: this.client.Balance,
 			IsActive: this.client.IsActive,
 			ExpirationDate: this.toDay,
