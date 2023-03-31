@@ -120,10 +120,6 @@ export class ClientManagePanelComponent implements OnInit {
 			});
 	}
 
-	returnClientTitle(): string {
-		return this.client ? this.client.FirstName + ' ' + this.client.LastName : 'New Client';
-	}
-
 	private loadAndCloseSideNav(): void {
 		setTimeout(() => {
 			this.fakeLoader = false;

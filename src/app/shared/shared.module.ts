@@ -23,7 +23,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CloseButtonComponent, ConfirmDialogComponent, EmptyPlugComponent, SpinnerComponent } from './components';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { ConfirmDialogService } from './services';
-import { PanelTitleDirective } from './directives';
+import { CompareName } from './pipes';
+
 
 export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
@@ -66,8 +67,8 @@ const LIBRARY = [
 	NgxMaskModule,
 ];
 
-const DIRECTIVES = [
-	PanelTitleDirective,
+const PIPES = [
+	CompareName,
 ];
 
 const SERVICES = [
@@ -86,11 +87,11 @@ const SERVICES = [
 		...MATERIAL_COMPONENTS,
 		...REUSE_COMPONENT,
 		...LIBRARY,
-		...DIRECTIVES,
+		...PIPES,
 	],
 	declarations: [
 		...REUSE_COMPONENT,
-		...DIRECTIVES,
+		...PIPES,
 	],
 	providers: [
 		...SERVICES,

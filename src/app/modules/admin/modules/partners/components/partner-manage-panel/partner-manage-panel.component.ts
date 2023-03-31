@@ -107,10 +107,6 @@ export class PartnerManagePanelComponent implements OnInit {
 			});
 	}
 
-	returnClientTitle(): string {
-		return this.client ? this.client.FirstName + ' ' + this.client.LastName : 'New Partner';
-	}
-
 	private loadAndCloseSideNav(): void {
 		setTimeout(() => {
 			this.fakeLoader = false;

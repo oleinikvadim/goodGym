@@ -1,8 +1,8 @@
 <div class="panel__wrapper">
 	<header class="panel__header">
 		<h6 class="text-bold text-ellipsis cursor-pointer"
-			[title]="returnClientTitle()">
-			{{returnClientTitle()}}
+			[title]="client? (client | compareName) : 'New Client'">
+			{{ client? (client | compareName) : 'New Client'}}
 		</h6>
 		<close-button (click)="closeSideNav()"
 			[class]="'btn-close--secondary btn-close--absolute'">
