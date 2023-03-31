@@ -10,7 +10,7 @@ import { ClientListComponent, ClientManagePanelComponent } from './components';
   ],
   declarations: [
     ClientListComponent,
-    ClientManagePanelComponent
+    ClientManagePanelComponent,
   ]
 })
 export class ClientsModule { }

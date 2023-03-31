@@ -23,14 +23,22 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CloseButtonComponent, ConfirmDialogComponent, EmptyPlugComponent, SpinnerComponent } from './components';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { ConfirmDialogService } from './services';
+import { PanelTitleDirective } from './directives';
 
 export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
+
+const ANGULAR_MODULE = [
+	CommonModule,
+	FormsModule,
+	HttpClientModule,
+	ReactiveFormsModule,
+];
 
 const REUSE_COMPONENT = [
 	SpinnerComponent,
 	EmptyPlugComponent,
 	ConfirmDialogComponent,
-	CloseButtonComponent
+	CloseButtonComponent,
 ];
 
 const MATERIAL_COMPONENTS = [
@@ -51,38 +59,41 @@ const MATERIAL_COMPONENTS = [
 	MatDialogModule,
 ];
 
-const LIBRIARY = [
+const LIBRARY = [
 	AngularFullpageModule,
 	SwiperModule,
 	GoogleMapsModule,
-	NgxMaskModule.forRoot(),
+	NgxMaskModule,
+];
+
+const DIRECTIVES = [
+	PanelTitleDirective,
+];
+
+const SERVICES = [
+	ConfirmDialogService,
 ];
 
 @NgModule({
 	imports: [
-		CommonModule,
-		FormsModule,
-		HttpClientModule,
-		ReactiveFormsModule,
-		MATERIAL_COMPONENTS,
-		LIBRIARY,
+		...ANGULAR_MODULE,
+		...MATERIAL_COMPONENTS,
+		...LIBRARY,
+		NgxMaskModule.forRoot(),
 	],
 	exports: [
-		CommonModule,
-		FormsModule,
-		HttpClientModule,
-		ReactiveFormsModule,
-		MATERIAL_COMPONENTS,
-		REUSE_COMPONENT,
-		LIBRIARY,
+		...ANGULAR_MODULE,
+		...MATERIAL_COMPONENTS,
+		...REUSE_COMPONENT,
+		...LIBRARY,
+		...DIRECTIVES,
 	],
 	declarations: [
-		REUSE_COMPONENT,
-		CloseButtonComponent
+		...REUSE_COMPONENT,
+		...DIRECTIVES,
 	],
 	providers: [
-		MatDatepickerModule,
-		ConfirmDialogService
+		...SERVICES,
 	],
 })
 export class SharedModule { }

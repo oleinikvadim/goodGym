@@ -33,6 +33,7 @@ export class ClientManagePanelComponent implements OnInit {
 	clientId: string | null;
 	fakeLoader: boolean;
 	genderEnum = GenderEnum;
+	color = 'red';
 	private unsubscribe$ = new Subject<boolean>();
 	constructor(
 		private route: ActivatedRoute,
