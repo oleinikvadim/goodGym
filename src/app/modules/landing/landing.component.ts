@@ -2,7 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { SectionName } from 'src/app/shared/enum';
-import { media, navigationAnimation } from 'src/app/shared/helper';
+import { navigationAnimation } from 'src/app/shared/helper';
 
 @Component({
 	selector: 'landing',
@@ -36,25 +36,15 @@ export class LandingComponent implements OnDestroy {
 
 
 	toggleMenu(): void {
-		this.isMobileMenuOpen();
 		this.toggleMenuIsActive = !this.toggleMenuIsActive;
 		this.fullpage_api.setAllowScrolling(!this.toggleMenuIsActive);
+		!this.toggleMenuIsActive
+			? document.body.style.overflow = 'visible'
+			: document.body.style.overflow = 'hidden';
 	}
 
 	getFullPageRef(fullPageRef: any): void {
 		this.fullpage_api = fullPageRef;
-	}
-
-	isMobileMenuOpen(): void {
-		media('(max-width: 768px)')
-			.pipe(takeUntil(this.unsubscribe$))
-			.subscribe((matches) => {
-				if (matches) {
-					!this.toggleMenuIsActive ?
-						document.body.style.overflow = 'hidden' :
-						document.body.style.overflow = 'auto';
-				}
-			});
 	}
 
 	ngOnDestroy(): void {

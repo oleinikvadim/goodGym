@@ -33,9 +33,9 @@
       line-height: 1;
       position: relative;
       transition: $base-transition;
-      font-size: 40px;
+      font-size: 30px;
 
-      @media (min-width: $tablet) {
+      @media (min-width: $tablet) and (min-height: $phone-custom) {
         font-size: 60px;
       }
 
