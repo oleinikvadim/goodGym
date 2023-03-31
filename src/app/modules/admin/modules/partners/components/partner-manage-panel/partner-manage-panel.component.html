@@ -1,5 +1,5 @@
-<div class="management__wrapper">
-	<header class="management__header">
+<div class="panel__wrapper">
+	<header class="panel__header">
 		<h6 class="text-bold text-ellipsis cursor-pointer"
 			[title]="returnClientTitle()">
 			{{returnClientTitle()}}
@@ -9,15 +9,14 @@
 		</close-button>
 	</header>
 
-	<div class="management__body">
-		<form [formGroup]="formGroup"
-			(submit)="onSubmit()"
-			class="management__form">
-			<div class="management__form-body">
+	<div class="panel__body">
+		<div [formGroup]="formGroup"
+			class="panel__form">
+			<div class="panel__form-body">
 				<div class="form-group">
 					<div class="form-row">
 						<mat-form-field appearance="outline"
-							class="form-field form-field--sm form-fild--nogap">
+							class="form-field form-field--sm form-field--nogap">
 							<mat-label>First name</mat-label>
 							<input matInput
 								placeholder="First name"
@@ -26,7 +25,7 @@
 						</mat-form-field>
 
 						<mat-form-field appearance="outline"
-							class="form-field form-field--sm form-fild--nogap">
+							class="form-field form-field--sm form-field--nogap">
 							<mat-label>Last Name</mat-label>
 							<input matInput
 								placeholder="Last Name"
@@ -40,9 +39,9 @@
 						<mat-radio-group color="primary"
 							aria-label="Select an option"
 							formControlName="Gender"
-							class="management__radio">
-							<mat-radio-button [value]="gernderEnum.MALE">Male</mat-radio-button>
-							<mat-radio-button [value]="gernderEnum.FEMALE">Female</mat-radio-button>
+							class="panel__radio">
+							<mat-radio-button [value]="genderEnum.MALE">Male</mat-radio-button>
+							<mat-radio-button [value]="genderEnum.FEMALE">Female</mat-radio-button>
 						</mat-radio-group>
 
 					</div>
@@ -51,7 +50,7 @@
 				<div class="form-group">
 					<div class="form-row">
 						<mat-form-field appearance="outline"
-							class="full-width form-field form-field--sm form-fild--nogap">
+							class="full-width form-field form-field--sm form-field--nogap">
 							<mat-label>Email</mat-label>
 							<input matInput
 								placeholder="Email"
@@ -62,7 +61,7 @@
 
 					<div class="form-row">
 						<mat-form-field appearance="outline"
-							class="full-width form-field form-field--sm form-fild--nogap">
+							class="full-width form-field form-field--sm form-field--nogap">
 							<mat-label>Address</mat-label>
 							<input matInput
 								placeholder="address"
@@ -83,22 +82,22 @@
 				</div>
 			</div>
 
-			<div class="management__action">
+			<div class="panel__action">
 				<button class="btn btn-primary btn-md btn-full"
-					type="submit"
-					[disabled]="!formGroup.valid">
+					[disabled]="!formGroup.valid"
+					(click)="onSubmit()">
 					Save
 				</button>
 
 				<button class="btn btn-outline btn-md btn-full"
 					type="button"
 					*ngIf="client"
-					(click)="deleteClientDiaolg(client)">
+					(click)="deleteClientDialog(client)">
 					Delete
 				</button>
 			</div>
 
-		</form>
+		</div>
 	</div>
 </div>
 

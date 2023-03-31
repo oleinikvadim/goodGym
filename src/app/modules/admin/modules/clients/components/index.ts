@@ -1,2 +1,2 @@
-export * from './list/list.component';
-export * from './management/management.component';
+export * from './client-list/client-list.component';
+export * from './client-manage-panel/client-manage-panel.component';

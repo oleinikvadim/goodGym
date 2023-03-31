@@ -8,14 +8,14 @@ import { Subject, takeUntil } from 'rxjs';
 import { CLIENT_ID, FAKE_LOADER_TIME } from 'src/app/shared/helper';
 import { Client } from 'src/app/shared/models/client.model';
 import { MockApiService } from 'src/app/shared/services';
-import { ManagementComponent } from '../management/management.component';
+import { PartnerManagePanelComponent } from '../partner-manage-panel/partner-manage-panel.component';
 
 @Component({
-  selector: 'list',
-  templateUrl: './list.component.html'
+  selector: 'partner-list',
+  templateUrl: './partner-list.component.html'
 })
-export class ListComponent implements OnInit {
-  @HostBinding('class') class = 'content-wrapper';
+export class PartnerListComponent implements OnInit {
+  @HostBinding('class') class = 'content';
   @ViewChild(MatSort) set matSort(sort: MatSort) {
     this.dataSource.sort = sort;
   }
@@ -55,7 +55,7 @@ export class ListComponent implements OnInit {
 
     this.overlayRef = this.overlay.create({
       hasBackdrop: true,
-      panelClass: 'management-panel',
+      panelClass: 'panel-primary',
       height: '100svh',
       maxHeight: '100svh',
       positionStrategy: this.overlay
@@ -79,7 +79,7 @@ export class ListComponent implements OnInit {
         this.overlayRef.detach();
       });
 
-    const popupComponent = this.overlayRef.attach(new ComponentPortal(ManagementComponent)).instance;
+    const popupComponent = this.overlayRef.attach(new ComponentPortal(PartnerManagePanelComponent)).instance;
 
     popupComponent.clientAction$
       .pipe(takeUntil(this.unsubscribe$))

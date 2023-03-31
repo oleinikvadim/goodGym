@@ -1,4 +1,4 @@
-.cdk-overlay-pane.management-panel {
+.cdk-overlay-pane.panel-primary {
   width: 100%;
 
   @media (min-width: $phone) {
@@ -7,7 +7,7 @@
   }
 }
 
-.management {
+.panel {
   display: block;
   background-color: $white;
   height: 100%;
@@ -16,7 +16,7 @@
   flex-direction: column;
   width: 100%;
 
-  .management__wrapper {
+  .panel__wrapper {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -25,7 +25,7 @@
       font-size: 13px;
     }
 
-    .management__radio {
+    .panel__radio {
       width: 100%;
       display: flex;
       flex-direction: row;
@@ -45,7 +45,7 @@
     }
   }
 
-  .management__header {
+  .panel__header {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -68,12 +68,12 @@
     }
   }
 
-  .management__body {
+  .panel__body {
     flex: 1;
     height: inherit;
   }
 
-  .management__action {
+  .panel__action {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -86,13 +86,13 @@
     }
   }
 
-  .management__form {
+  .panel__form {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    .management__form-body {
+    .panel__form-body {
       overflow: auto;
       padding: 10px;
       max-height: calc(100svh - 115px);
@@ -101,7 +101,7 @@
       flex: 1;
 
       @media (min-width: $phone) {
-        max-height: calc(100svh - 145px);
+        max-height: calc(100svh - 155px);
         padding: 20px;
       }
 

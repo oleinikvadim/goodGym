@@ -2,17 +2,17 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
-import { GernderEnum } from 'src/app/shared/enum';
+import { GenderEnum } from 'src/app/shared/enum';
 import { CLIENT_ID, FAKE_LOADER_TIME } from 'src/app/shared/helper';
 import { Client } from 'src/app/shared/models/client.model';
 import { ConfirmDialogService, MockApiService } from 'src/app/shared/services';
 
 @Component({
-	selector: 'management',
-	templateUrl: './management.component.html'
+	selector: 'partner-manage-panel',
+	templateUrl: './partner-manage-panel.component.html'
 })
-export class ManagementComponent implements OnInit {
-	@HostBinding('class') class = 'management';
+export class PartnerManagePanelComponent implements OnInit {
+	@HostBinding('class') class = 'panel';
 	client: Client;
 	closeSubject$ = new Subject();
 	clientAction$ = new Subject<boolean>();
@@ -20,11 +20,9 @@ export class ManagementComponent implements OnInit {
 	formGroup: FormGroup = new FormGroup({
 		FirstName: new FormControl('', [Validators.required]),
 		LastName: new FormControl('', [Validators.required]),
-		DateOfBirth: new FormControl(null),
 		Gender: new FormControl(null, [Validators.required]),
 		Email: new FormControl('', [Validators.required, Validators.email]),
 		Address: new FormControl(''),
-		Phones: new FormArray([]),
 		IsActive: new FormControl(null),
 		ExpirationDate: new FormControl(''),
 		Balance: new FormControl(null),
@@ -32,7 +30,7 @@ export class ManagementComponent implements OnInit {
 	});
 	clientId: string | null;
 	fakeLoader: boolean;
-	gernderEnum = GernderEnum;
+	genderEnum = GenderEnum;
 	private unsubscribe$ = new Subject<boolean>();
 	constructor(
 		private route: ActivatedRoute,
@@ -70,16 +68,6 @@ export class ManagementComponent implements OnInit {
 		return this.formGroup.controls.Phones as FormArray;
 	}
 
-	addPhone(phone?: string): void {
-		phone
-			? this.getFormsPhonesArray.push(new FormControl(phone))
-			: this.getFormsPhonesArray.push(new FormControl(''));
-	}
-
-	deletePhone(phoneId: number): void {
-		this.getFormsPhonesArray.removeAt(phoneId);
-	}
-
 	closeSideNav(): void {
 		this.closeSubject$.next(true);
 		this.formGroup.reset();
@@ -96,9 +84,9 @@ export class ManagementComponent implements OnInit {
 		this.loadAndCloseSideNav();
 	}
 
-	deleteClientDiaolg(client: Client) {
+	deleteClientDialog(client: Client) {
 		const options = {
-			title: 'Delete client',
+			title: 'Delete partner',
 			message: `Are you sure you want to delete ${client.FirstName} ${client.LastName}?`,
 			cancelText: 'Cancel',
 			confirmText: 'Yes'
@@ -120,7 +108,7 @@ export class ManagementComponent implements OnInit {
 	}
 
 	returnClientTitle(): string {
-		return this.client ? this.client.FirstName + ' ' + this.client.LastName : 'New Client';
+		return this.client ? this.client.FirstName + ' ' + this.client.LastName : 'New Partner';
 	}
 
 	private loadAndCloseSideNav(): void {
@@ -131,10 +119,8 @@ export class ManagementComponent implements OnInit {
 	}
 
 	private init(): void {
-		this.client.Phones.forEach(phone => this.addPhone(phone));
 		this.formGroup.reset(this.client);
 		this.formGroup.patchValue({
-			DateOfBirth: new Date(this.client.DateOfBirth),
 			Balance: this.client.Balance,
 			IsActive: this.client.IsActive,
 			ExpirationDate: this.toDay,
@@ -144,7 +130,7 @@ export class ManagementComponent implements OnInit {
 	private newClientInit(): void {
 		this.formGroup.reset();
 		this.formGroup.patchValue({
-			Gender: this.gernderEnum.MALE,
+			Gender: this.genderEnum.MALE,
 			Id: Math.floor(Math.random() * 10).toString(),
 			Balance: Math.floor(Math.random() * 20),
 			IsActive: false,

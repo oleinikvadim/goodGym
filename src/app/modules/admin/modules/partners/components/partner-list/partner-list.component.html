@@ -1,0 +1,108 @@
+<div class="content-wrapper">
+  <div class="content-page">
+    <header class="content-page__header content-page__header--with-action">
+      <h3 class="content-page__title">Partners</h3>
+    </header>
+
+    <main class="content-page__body content-page__body--table">
+
+      <table mat-table
+        [dataSource]="dataSource"
+        class="table table--primary"
+        matSort
+        #clientTable>
+
+        <!-- FirstName Column -->
+        <ng-container matColumnDef="FirstName">
+          <th mat-header-cell
+            mat-sort-header
+            *matHeaderCellDef> Partner First Name</th>
+          <td mat-cell
+            *matCellDef="let element"
+            [title]="element.FirstName"> {{element.FirstName}} </td>
+        </ng-container>
+
+        <!-- LastName Column -->
+        <ng-container matColumnDef="LastName">
+          <th mat-header-cell
+            mat-sort-header
+            *matHeaderCellDef> Partner Last Name </th>
+          <td mat-cell
+            *matCellDef="let element"
+            [title]="element.LastName"> {{element.LastName}} </td>
+        </ng-container>
+
+        <!-- Gender Column -->
+        <ng-container matColumnDef="Gender">
+          <th mat-header-cell
+            mat-sort-header
+            *matHeaderCellDef> Gender </th>
+          <td mat-cell
+            *matCellDef="let element"
+            [title]="element.Gender"> {{element.Gender}} </td>
+        </ng-container>
+
+        <!-- IsActive Column -->
+        <ng-container matColumnDef="IsActive">
+          <th mat-header-cell
+            mat-sort-header
+            *matHeaderCellDef> Active </th>
+          <td mat-cell
+            *matCellDef="let element">
+            <container-element [ngSwitch]="element.IsActive">
+              <ng-container *ngSwitchCase="true">
+                <mat-icon>done</mat-icon>
+              </ng-container>
+              <ng-container *ngSwitchCase="false">
+                <mat-icon>block</mat-icon>
+              </ng-container>
+              <ng-container *ngSwitchDefault>...</ng-container>
+            </container-element>
+          </td>
+        </ng-container>
+
+        <!-- ExpirationDate Column -->
+        <ng-container matColumnDef="ExpirationDate">
+          <th mat-header-cell
+            mat-sort-header
+            *matHeaderCellDef> Emplane Date </th>
+          <td mat-cell
+            *matCellDef="let element">
+            {{element.ExpirationDate | date}}
+          </td>
+        </ng-container>
+
+        <!-- Balance Column -->
+        <ng-container matColumnDef="Balance">
+          <th mat-header-cell
+            mat-sort-header
+            *matHeaderCellDef> Current Balance </th>
+          <td mat-cell
+            *matCellDef="let element"
+            [title]="element.Balance | number:('1.2-6')">
+            {{element.Balance | number:('1.2-6')}}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row
+          *matHeaderRowDef="displayedColumns;sticky: true"></tr>
+        <tr mat-row
+          *matRowDef="let row; columns: displayedColumns;"
+          class="mat-row"
+          (click)="displayOverlay(row)"></tr>
+      </table>
+    </main>
+
+  </div>
+
+  <button mat-fab
+    color="primary"
+    class="btn btn-add"
+    (click)="displayOverlay()">
+    <mat-icon>add</mat-icon>
+  </button>
+
+  <spinner *ngIf="fakeLoader"
+    [color]="'spinner-primary'">
+  </spinner>
+</div>

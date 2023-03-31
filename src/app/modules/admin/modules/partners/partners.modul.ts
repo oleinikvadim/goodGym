@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { ListComponent, ManagementComponent } from './components';
-import { PartnersComponent } from './partners.component';
+import { PartnerListComponent, PartnerManagePanelComponent } from './components';
 
 @NgModule({
   imports: [
-    RouterModule.forChild([{ path: '', component: PartnersComponent }]),
+    RouterModule.forChild([{ path: '', component: PartnerListComponent }]),
     SharedModule,
   ],
   declarations: [
-    PartnersComponent,
-    ListComponent,
-    ManagementComponent
+    PartnerListComponent,
+    PartnerManagePanelComponent
   ]
 })
 export class PartnersModule { }
