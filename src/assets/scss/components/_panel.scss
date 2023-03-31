@@ -3,7 +3,7 @@
 
   @media (min-width: $phone) {
     width: fit-content;
-    max-width: 450px;
+    width: 450px;
   }
 }
 
@@ -20,6 +20,8 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+    justify-content: space-between;
+    height: 100%;
 
     .toggle {
       font-size: 13px;
@@ -51,11 +53,20 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    max-width: 90%;
+    flex: 0 0 auto;
+    border-bottom: 1px solid $light-grey;
 
     @media (min-width: $phone) {
-      max-width: 100%;
       padding: 20px;
+    }
+
+    h6 {
+      max-width: 90%;
+
+      @media (min-width: $phone) {
+        max-width: 100%;
+      }
+
     }
 
     mat-icon {
@@ -71,15 +82,24 @@
   .panel__body {
     flex: 1;
     height: inherit;
+    overflow: auto;
+    padding: 10px;
+    flex: 1 1 auto;
+
+    @media (min-width: $phone) {
+      padding: 20px;
+    }
   }
 
-  .panel__action {
+  .panel__footer {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
     padding: 10px;
+    flex: 0 0 auto;
+    border-top: 1px solid $light-grey;
 
     @media (min-width: $phone) {
       padding: 20px;
@@ -91,24 +111,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    .panel__form-body {
-      overflow: auto;
-      padding: 10px;
-      max-height: calc(100svh - 115px);
-      border-top: 1px solid $light-grey;
-      border-bottom: 1px solid $light-grey;
-      flex: 1;
-
-      @media (min-width: $phone) {
-        max-height: calc(100svh - 155px);
-        padding: 20px;
-      }
-
-      @media (min-width: $tablet) {
-        max-height: calc(100svh - 165px);
-      }
-    }
 
     .form-group {
       margin-bottom: 15px;

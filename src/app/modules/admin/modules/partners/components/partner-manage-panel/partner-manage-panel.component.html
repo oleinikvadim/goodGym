@@ -82,22 +82,23 @@
 				</div>
 			</div>
 
-			<div class="panel__action">
-				<button class="btn btn-primary btn-md btn-full"
-					[disabled]="!formGroup.valid"
-					(click)="onSubmit()">
-					Save
-				</button>
-
-				<button class="btn btn-outline btn-md btn-full"
-					type="button"
-					*ngIf="client"
-					(click)="deleteClientDialog(client)">
-					Delete
-				</button>
-			</div>
 
 		</div>
+	</div>
+
+	<div class="panel__footer">
+		<button class="btn btn-primary btn-md btn-full"
+			[disabled]="!formGroup.valid"
+			(click)="onSubmit()">
+			Save
+		</button>
+
+		<button class="btn btn-outline btn-md btn-full"
+			type="button"
+			*ngIf="client"
+			(click)="deleteClientDialog(client)">
+			Delete
+		</button>
 	</div>
 </div>
 

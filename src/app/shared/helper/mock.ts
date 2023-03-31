@@ -1,6 +1,6 @@
 import { Client } from "../models/client.model";
 
-export const fakeClinets: Client[] = [
+export const fakeClients: Client[] = [
   {
     "Id": "5d2713f34d19e39d7add6fe2",
     "IsActive": true,

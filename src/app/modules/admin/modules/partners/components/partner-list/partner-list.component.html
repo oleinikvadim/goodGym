@@ -12,6 +12,18 @@
         matSort
         #clientTable>
 
+        <!-- Address Column -->
+        <ng-container matColumnDef="Address">
+          <th mat-header-cell
+            mat-sort-header
+            *matHeaderCellDef> Address </th>
+          <td mat-cell
+            *matCellDef="let element"
+            [title]="element.Address">
+            {{element.Address}}
+          </td>
+        </ng-container>
+
         <!-- FirstName Column -->
         <ng-container matColumnDef="FirstName">
           <th mat-header-cell
@@ -58,17 +70,6 @@
               </ng-container>
               <ng-container *ngSwitchDefault>...</ng-container>
             </container-element>
-          </td>
-        </ng-container>
-
-        <!-- ExpirationDate Column -->
-        <ng-container matColumnDef="ExpirationDate">
-          <th mat-header-cell
-            mat-sort-header
-            *matHeaderCellDef> Emplane Date </th>
-          <td mat-cell
-            *matCellDef="let element">
-            {{element.ExpirationDate | date}}
           </td>
         </ng-container>
 

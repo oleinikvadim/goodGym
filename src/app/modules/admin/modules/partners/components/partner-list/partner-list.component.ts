@@ -5,10 +5,10 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
+import { PartnerManagePanelComponent } from '../partner-manage-panel/partner-manage-panel.component';
 import { CLIENT_ID, FAKE_LOADER_TIME } from 'src/app/shared/helper';
 import { Client } from 'src/app/shared/models/client.model';
 import { MockApiService } from 'src/app/shared/services';
-import { PartnerManagePanelComponent } from '../partner-manage-panel/partner-manage-panel.component';
 
 @Component({
   selector: 'partner-list',
@@ -20,7 +20,7 @@ export class PartnerListComponent implements OnInit {
     this.dataSource.sort = sort;
   }
   @ViewChild('clientTable', { static: true }) clientTable!: MatTable<Client>;
-  displayedColumns: string[] = ['FirstName', 'LastName', 'IsActive', 'Gender', 'ExpirationDate', 'Balance'];
+  displayedColumns: string[] = ['FirstName', 'LastName', 'Address', 'IsActive', 'Gender', 'Balance'];
   dataSource = new MatTableDataSource<Client>();
   fakeLoader = false;
   clientId: string | null;
