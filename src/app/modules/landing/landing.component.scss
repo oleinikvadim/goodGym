@@ -67,13 +67,9 @@
 	padding: 40px 0;
 	min-height: 500px;
 
-	@media (min-width: $tablet-lg) {
+	@media (min-width: $tablet) {
 		min-height: 700px;
-	}
-
-	@media (min-width: $desktop) {
-		min-height: auto;
-		padding: 0;
+		padding: 20px 0;
 	}
 
 	&:before {
