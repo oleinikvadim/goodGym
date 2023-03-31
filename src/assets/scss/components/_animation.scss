@@ -1,4 +1,4 @@
-@media (min-width: $tablet) {
+@media (min-width: $tablet) and (min-height: $phone-custom) {
 	.section.active {
 		.anim {
 			opacity: $opacity;

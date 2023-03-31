@@ -1,5 +1,11 @@
 @import "variables";
 
+:host {
+	overflow: hidden;
+	width: 100%;
+	display: block;
+}
+
 .section {
 	overflow-x: hidden;
 }

@@ -4,7 +4,7 @@
 	padding: 40px 0;
 	display: block;
 
-	@media (min-width: $tablet) {
+	@media (min-width: $tablet) and (min-height: $phone-custom) {
 		padding: 0;
 	}
 }
@@ -32,7 +32,7 @@
 	justify-content: center;
 	height: 100%;
 
-	@media (min-width: $tablet) {
+	@media (min-width: $tablet) and (min-height: $phone-custom) {
 		justify-content: flex-start;
 		flex-direction: row;
 	}
@@ -121,7 +121,7 @@
 .thumbs-swiper {
 	max-width: 230px;
 
-	@media (min-width: $tablet) {
+	@media (min-width: $tablet) and (min-height: $phone-custom) {
 		position: absolute;
 		bottom: 30px;
 		left: 50%;

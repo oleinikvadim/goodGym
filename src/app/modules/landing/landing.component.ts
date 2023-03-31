@@ -27,7 +27,7 @@ export class LandingComponent implements OnDestroy {
 			menu: '#menu',
 			navigation: false,
 			responsiveWidth: 768,
-			responsiveHeight: 500,
+			responsiveHeight: 600,
 		};
 		this.route.fragment
 			.pipe(takeUntil(this.unsubscribe$))
