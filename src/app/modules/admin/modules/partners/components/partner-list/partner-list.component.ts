@@ -6,7 +6,7 @@ import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { PartnerManagePanelComponent } from '../partner-manage-panel/partner-manage-panel.component';
-import { CLIENT_ID, FAKE_LOADER_TIME } from 'src/app/shared/helper';
+import { PARTNER_ID, FAKE_LOADER_TIME } from 'src/app/shared/helper';
 import { Client } from 'src/app/shared/models/client.model';
 import { MockApiService } from 'src/app/shared/services';
 
@@ -33,7 +33,7 @@ export class PartnerListComponent implements OnInit {
     private route: ActivatedRoute,
     private mockApiService: MockApiService
   ) {
-    this.clientId = this.route.snapshot.queryParamMap.get(CLIENT_ID);
+    this.clientId = this.route.snapshot.queryParamMap.get(PARTNER_ID);
     if (this.clientId) {
       this.displayOverlay();
     }
@@ -103,7 +103,7 @@ export class PartnerListComponent implements OnInit {
   private setClientId(params?: string): void {
     this.router.navigate([], {
       queryParams: {
-        [`${CLIENT_ID}`]: params ? params : null,
+        [`${PARTNER_ID}`]: params ? params : null,
       },
     });
   }

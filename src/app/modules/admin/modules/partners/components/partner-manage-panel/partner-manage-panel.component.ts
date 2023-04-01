@@ -3,7 +3,7 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { GenderEnum } from 'src/app/shared/enum';
-import { CLIENT_ID, FAKE_LOADER_TIME } from 'src/app/shared/helper';
+import { PARTNER_ID, FAKE_LOADER_TIME } from 'src/app/shared/helper';
 import { Client } from 'src/app/shared/models/client.model';
 import { ConfirmDialogService, MockApiService } from 'src/app/shared/services';
 
@@ -40,7 +40,7 @@ export class PartnerManagePanelComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		this.clientId = this.route.snapshot.queryParamMap.get(CLIENT_ID);
+		this.clientId = this.route.snapshot.queryParamMap.get(PARTNER_ID);
 		if (this.clientId) {
 			this.fakeLoader = true;
 		}
