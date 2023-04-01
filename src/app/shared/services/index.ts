@@ -1,4 +1,4 @@
 export * from "./authentication.service";
-export * from "./getClientList.service";
-export * from "./mockData.service";
+export * from "./get-client-list.service";
+export * from "./mock-data.service";
 export * from "./confirm-dialog.service";
