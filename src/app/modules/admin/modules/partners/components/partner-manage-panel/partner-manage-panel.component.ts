@@ -1,9 +1,8 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { GenderEnum } from 'src/app/shared/enum';
-import { PARTNER_ID, FAKE_LOADER_TIME } from 'src/app/shared/helper';
+import { FAKE_LOADER_TIME } from 'src/app/shared/helper';
 import { Client } from 'src/app/shared/models/client.model';
 import { ConfirmDialogService, MockApiService } from 'src/app/shared/services';
 
@@ -28,35 +27,29 @@ export class PartnerManagePanelComponent implements OnInit {
 		Balance: new FormControl(null),
 		Id: new FormControl('')
 	});
-	clientId: string | null;
+	clientId: string;
 	fakeLoader: boolean;
 	genderEnum = GenderEnum;
 	private unsubscribe$ = new Subject<boolean>();
 	constructor(
-		private route: ActivatedRoute,
 		private mockApiService: MockApiService,
 		private dialogService: ConfirmDialogService,
 	) {
 	}
 
 	ngOnInit(): void {
-		this.clientId = this.route.snapshot.queryParamMap.get(PARTNER_ID);
-		if (this.clientId) {
-			this.fakeLoader = true;
-		}
-
-		this.mockApiService
-			.getClients()
-			.pipe(takeUntil(this.unsubscribe$))
-			.subscribe((clients) => {
-				this.client = clients.filter((client) => client.Id === this.clientId)[0];
-				if (this.client) {
+		if (this.clientId !== '-1') {
+			this.mockApiService
+				.getClients()
+				.pipe(takeUntil(this.unsubscribe$))
+				.subscribe((clients) => {
+					this.client = clients.filter((client) => client.Id === this.clientId)[0];
 					this.init();
 					setTimeout(() => this.fakeLoader = false, FAKE_LOADER_TIME);
-				} else {
-					this.newClientInit();
-				}
-			});
+				});
+		} else {
+			this.newClientInit();
+		}
 	}
 
 	ngOnDestroy(): void {

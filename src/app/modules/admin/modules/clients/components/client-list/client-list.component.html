@@ -108,7 +108,7 @@
         <tr mat-row
           *matRowDef="let row; columns: displayedColumns;"
           class="mat-row"
-          (click)="displayOverlay(row)"></tr>
+          (click)="onOpenManagePanel(row)"></tr>
       </table>
 
       <empty-plug *ngIf="dataSource.data && dataSource.filteredData.length === 0 && !fakeLoader"></empty-plug>
@@ -119,7 +119,7 @@
   <button mat-fab
     color="primary"
     class="btn btn-add"
-    (click)="displayOverlay()">
+    (click)="onOpenManagePanel()">
     <mat-icon>add</mat-icon>
   </button>
 
