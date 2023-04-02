@@ -41,6 +41,7 @@ export class ClientManagePanelComponent implements OnInit {
 
 	ngOnInit(): void {
 		if (this.clientId !== '-1') {
+			this.fakeLoader = true;
 			this.mockApiService
 				.getClients()
 				.pipe(takeUntil(this.unsubscribe$))

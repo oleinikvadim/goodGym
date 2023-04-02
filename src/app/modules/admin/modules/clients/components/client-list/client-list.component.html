@@ -108,7 +108,7 @@
         <tr mat-row
           *matRowDef="let row; columns: displayedColumns;"
           class="mat-row"
-          (click)="onOpenManagePanel(row)"></tr>
+          (click)="onOpenManagePanel(row.Id)"></tr>
       </table>
 
       <empty-plug *ngIf="dataSource.data && dataSource.filteredData.length === 0 && !fakeLoader"></empty-plug>

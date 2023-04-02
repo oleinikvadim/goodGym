@@ -37,7 +37,7 @@ export class ClientListComponent implements OnInit {
   ) {
     this.clientId = this.route.snapshot.queryParamMap.get(CLIENT_ID);
     if (this.clientId) {
-      this.onOpenManagePanel();
+      this.onOpenManagePanel(this.clientId);
     }
 
     this.clientTitle = this.route.parent?.snapshot.url[0].path;
@@ -52,9 +52,9 @@ export class ClientListComponent implements OnInit {
     this.unsubscribe$.unsubscribe();
   }
 
-  onOpenManagePanel(client?: Client): void {
-    if (client) {
-      this.setClientId(client.Id);
+  onOpenManagePanel(clientId?: string): void {
+    if (clientId) {
+      this.setClientId(clientId);
     }
 
     this.overlayRef = this.overlay.create({
@@ -84,7 +84,7 @@ export class ClientListComponent implements OnInit {
       });
 
     const popupComponent = this.overlayRef.attach(new ComponentPortal(ClientManagePanelComponent)).instance;
-    popupComponent.clientId = client?.Id || '-1';
+    popupComponent.clientId = clientId || '-1';
 
     popupComponent.clientAction$
       .pipe(takeUntil(this.unsubscribe$))
